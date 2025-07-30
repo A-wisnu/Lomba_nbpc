@@ -2,7 +2,7 @@
 class ChatbotManager {
     constructor() {
         this.messages = this.loadMessages();
-        this.apiEndpoint = 'https://your-backend-url.railway.app/chat'; // Will be replaced with actual backend URL
+        this.apiEndpoint = 'https://labtanam-backend.vercel.app/api/chat'; // Vercel backend URL
         this.isLoading = false;
         this.init();
     }
