@@ -31,22 +31,23 @@ class MobileNavController {
      * Get current page from URL or body class
      */
     getCurrentPage() {
-        const path = window.location.pathname;
-        const fileName = path.split('/').pop() || 'index.html';
-        
-        // More robust page detection
-        if (fileName === 'index.html' || fileName === '' || path === '/' || path.endsWith('/')) return 'home';
-        if (fileName === 'edukasi.html' || path.includes('edukasi')) return 'edukasi';
-        if (fileName === 'monitoring.html' || path.includes('monitoring')) return 'monitoring';
-        if (fileName === 'chatbot.html' || path.includes('chatbot')) return 'chatbot';
-        if (fileName === 'komunitas.html' || path.includes('komunitas')) return 'komunitas';
-        
-        // Fallback: check if we're on any specific page
+        // First check body classes (most reliable)
         const bodyClasses = document.body.className;
         if (bodyClasses.includes('page-edukasi')) return 'edukasi';
         if (bodyClasses.includes('page-monitoring')) return 'monitoring';
         if (bodyClasses.includes('page-chatbot')) return 'chatbot';
         if (bodyClasses.includes('page-komunitas')) return 'komunitas';
+        if (bodyClasses.includes('page-home')) return 'home';
+        
+        // Fallback to URL detection
+        const path = window.location.pathname;
+        const fileName = path.split('/').pop() || 'index.html';
+        
+        if (fileName === 'edukasi.html' || path.includes('edukasi')) return 'edukasi';
+        if (fileName === 'monitoring.html' || path.includes('monitoring')) return 'monitoring';
+        if (fileName === 'chatbot.html' || path.includes('chatbot')) return 'chatbot';
+        if (fileName === 'komunitas.html' || path.includes('komunitas')) return 'komunitas';
+        if (fileName === 'index.html' || fileName === '' || path === '/' || path.endsWith('/')) return 'home';
         
         return 'home';
     }

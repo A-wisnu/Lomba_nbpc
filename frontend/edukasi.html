@@ -6,8 +6,8 @@
     <title>Edukasi - LABTANAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/clean-ui.css">
     <link rel="stylesheet" href="assets/css/mobile-nav.css">
-    <link rel="stylesheet" href="assets/css/button-animations.css">
     <script>
         tailwind.config = {
             theme: {
@@ -35,7 +35,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 hover-scale">
+                    <div class="flex-shrink-0 ">
                         <a href="index.html" class="text-2xl font-bold text-primary">
                             <i class="fas fa-leaf mr-2 text-accent pulse"></i>
                             <span class="text-reveal">LABTANAM</span>
@@ -43,52 +43,26 @@
                     </div>
                 </div>
                 <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 btn-animate">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 ">
                         <i class="fas fa-home mr-1"></i>Beranda
                     </a>
-                    <a href="edukasi.html" class="nav-link text-primary font-medium border-b-2 border-primary pb-1 px-3 py-2 rounded-lg btn-animate">
+                    <a href="edukasi.html" class="nav-link text-primary font-medium border-b-2 border-primary pb-1 px-3 py-2 rounded-lg ">
                         <i class="fas fa-graduation-cap mr-1"></i>Edukasi
                     </a>
-                    <a href="monitoring.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 btn-animate">
+                    <a href="monitoring.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 ">
                         <i class="fas fa-chart-line mr-1"></i>Monitoring
                     </a>
-                    <a href="chatbot.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 btn-animate">
+                    <a href="chatbot.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 ">
                         <i class="fas fa-robot mr-1"></i>ChatBot AI
                     </a>
-                    <a href="komunitas.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 btn-animate">
+                    <a href="komunitas.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 ">
                         <i class="fas fa-users mr-1"></i>Komunitas
                     </a>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary focus:outline-none p-2 rounded-lg hover:bg-green-50 btn-animate transition-all duration-300">
-                        <div class="hamburger-icon">
-                            <span class="block w-6 h-0.5 bg-current mb-1 transition-all duration-300"></span>
-                            <span class="block w-6 h-0.5 bg-current mb-1 transition-all duration-300"></span>
-                            <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
-                        </div>
                     </button>
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="index.html" class="mobile-nav-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-green-50 rounded-lg transition-all duration-300 btn-animate">
-                    <i class="fas fa-home mr-3 w-5"></i>Beranda
-                </a>
-                <a href="edukasi.html" class="mobile-nav-link block px-3 py-3 text-primary font-medium bg-green-50 rounded-lg btn-animate">
-                    <i class="fas fa-graduation-cap mr-3 w-5"></i>Edukasi
-                </a>
-                <a href="monitoring.html" class="mobile-nav-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-green-50 rounded-lg transition-all duration-300 btn-animate">
-                    <i class="fas fa-chart-line mr-3 w-5"></i>Monitoring
-                </a>
-                <a href="chatbot.html" class="mobile-nav-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-green-50 rounded-lg transition-all duration-300 btn-animate">
-                    <i class="fas fa-robot mr-3 w-5"></i>ChatBot AI
-                </a>
-                <a href="komunitas.html" class="mobile-nav-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-green-50 rounded-lg transition-all duration-300 btn-animate">
-                    <i class="fas fa-users mr-3 w-5"></i>Komunitas
-                </a>
-            </div>
         </div>
     </nav>
 
@@ -117,19 +91,19 @@
                 
                 <!-- Stats -->
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-4xl mx-auto mb-8" data-animation="fade-in-up" data-delay="900">
-                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 hover-lift">
+                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 ">
                         <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">500+</div>
                         <div class="text-sm lg:text-base opacity-80">Video Tutorial</div>
                     </div>
-                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 hover-lift">
+                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 ">
                         <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">50+</div>
                         <div class="text-sm lg:text-base opacity-80">Panduan PDF</div>
                     </div>
-                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 hover-lift">
+                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 ">
                         <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">10K+</div>
                         <div class="text-sm lg:text-base opacity-80">Siswa Aktif</div>
                     </div>
-                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 hover-lift">
+                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 ">
                         <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">95%</div>
                         <div class="text-sm lg:text-base opacity-80">Tingkat Sukses</div>
                     </div>
@@ -137,10 +111,10 @@
                 
                 <!-- CTA Button -->
                 <div class="fade-in-up stagger-5" data-animation="fade-in-up" data-delay="1200">
-                    <button onclick="scrollToContent()" class="group bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-yellow-50 transition-all duration-300 btn-animate hover-lift shadow-lg hover:shadow-xl">
-                        <i class="fas fa-play mr-2 group-hover:animate-pulse"></i>
+                    <button onclick="scrollToContent()" class="btn">
+                        <i class="fas fa-play"></i>
                         <span>Mulai Belajar Sekarang</span>
-                        <i class="fas fa-arrow-down ml-2 group-hover:animate-bounce"></i>
+                        <i class="fas fa-arrow-down"></i>
                     </button>
                 </div>
             </div>
@@ -156,16 +130,16 @@
     <!-- Filter Tabs -->
     <div id="content-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-wrap gap-4 justify-center mb-8">
-            <button class="filter-btn active bg-primary text-white px-6 py-2 rounded-full font-medium" data-filter="all">
+            <button class="btn" data-filter="all">
                 Semua Materi
             </button>
-            <button class="filter-btn bg-white text-gray-700 border border-gray-300 px-6 py-2 rounded-full font-medium hover:bg-gray-50" data-filter="beginner">
+            <button class="btn" data-filter="beginner">
                 Pemula
             </button>
-            <button class="filter-btn bg-white text-gray-700 border border-gray-300 px-6 py-2 rounded-full font-medium hover:bg-gray-50" data-filter="intermediate">
+            <button class="btn" data-filter="intermediate">
                 Menengah
             </button>
-            <button class="filter-btn bg-white text-gray-700 border border-gray-300 px-6 py-2 rounded-full font-medium hover:bg-gray-50" data-filter="advanced">
+            <button class="btn" data-filter="advanced">
                 Lanjutan
             </button>
         </div>
@@ -175,7 +149,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Video Tutorial 1 -->
-            <div class="content-item bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 card-hover" data-category="beginner">
+            <div class="content-item bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 " data-category="beginner">
                 <div class="relative group">
                     <div class="aspect-video bg-gradient-to-br from-green-400 via-emerald-500 to-blue-500 flex items-center justify-center relative overflow-hidden">
                         <div class="text-center text-white z-10">
@@ -210,19 +184,12 @@
                         </div>
                         <span class="text-green-600 font-semibold">Gratis</span>
                     </div>
-                    <div class="btn-group">
-                        <button class="btn btn-primary btn-shimmer btn-ripple flex-1" 
-                                data-popup="video-tutorial-1" 
-                                data-popup-type="bounce"
-                                data-popup-title="Pengenalan Hidroponik untuk Pemula"
-                                data-popup-content="<div class='aspect-video bg-gray-100 rounded-lg mb-4 flex items-center justify-center'><i class='fas fa-play-circle text-4xl text-green-500'></i></div><p>Video tutorial lengkap tentang dasar-dasar hidroponik untuk pemula. Anda akan mempelajari:</p><ul class='list-disc list-inside mt-2 space-y-1'><li>Konsep dasar hidroponik</li><li>Jenis-jenis sistem hidroponik</li><li>Tanaman yang cocok untuk pemula</li><li>Persiapan alat dan bahan</li></ul>">
-                            <i class="fas fa-play mr-2"></i>Tonton
+                                        <div class="flex gap-2">
+                        <button class="btn">
+                            <i class="fas fa-play"></i>
+                            <span>Tonton</span>
                         </button>
-                        <button class="btn btn-secondary btn-icon-only btn-ripple" 
-                                data-popup="dynamic" 
-                                data-popup-type="slide-top"
-                                data-popup-title="Bookmark Tutorial"
-                                data-popup-content="<p>Tutorial telah ditambahkan ke daftar bookmark Anda!</p>">
+                        <button class="btn">
                             <i class="fas fa-bookmark"></i>
                         </button>
                     </div>
@@ -376,7 +343,7 @@
             
             <div class="space-y-6">
                 <div class="border border-gray-200 rounded-lg">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                    <button class="btn">
                         <span class="font-semibold text-gray-900">Apa keuntungan hidroponik dibanding tanah?</span>
                         <i class="fas fa-chevron-down text-gray-400"></i>
                     </button>
@@ -386,7 +353,7 @@
                 </div>
                 
                 <div class="border border-gray-200 rounded-lg">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                    <button class="btn">
                         <span class="font-semibold text-gray-900">Berapa modal awal untuk memulai hidroponik?</span>
                         <i class="fas fa-chevron-down text-gray-400"></i>
                     </button>
@@ -396,7 +363,7 @@
                 </div>
                 
                 <div class="border border-gray-200 rounded-lg">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                    <button class="btn">
                         <span class="font-semibold text-gray-900">Tanaman apa yang cocok untuk pemula?</span>
                         <i class="fas fa-chevron-down text-gray-400"></i>
                     </button>
@@ -448,12 +415,6 @@
         </div>
     </footer>
 
-    <!-- Floating Action Button -->
-    <button class="btn btn-primary btn-float btn-pulse btn-ripple" 
-            data-popup="dynamic" 
-            data-popup-type="bounce"
-            data-popup-title="🎓 Bantuan Belajar"
-            data-popup-content="<div class='text-center'><i class='fas fa-graduation-cap text-4xl text-green-500 mb-4'></i><p class='mb-4'>Butuh bantuan dalam belajar hidroponik?</p><div class='btn-group-vertical'><button class='btn btn-primary btn-full-width' onclick='showNotification(\"Menghubungkan ke tutor...\", \"info\")'>💬 Chat dengan Tutor</button><button class='btn btn-secondary btn-full-width' onclick='showNotification(\"Panduan telah dikirim ke email Anda!\", \"success\")'>📧 Download Panduan PDF</button><button class='btn btn-accent btn-full-width' onclick='showNotification(\"Bergabung dengan komunitas belajar!\", \"info\")'>👥 Gabung Komunitas</button></div></div>">
         <i class="fas fa-question-circle"></i>
     </button>
 
@@ -464,7 +425,6 @@
     <script src="js/mobile-nav.js"></script>
     
     <!-- Pop-up Controller -->
-    <script src="js/popup-controller.js"></script>
 
     <script>
         // Enhanced mobile menu toggle with animation
