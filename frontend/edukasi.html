@@ -14,32 +14,27 @@
             theme: {
                 extend: {
                     colors: {
-                        // Educational Psychology Color Palette
-                        primary: '#059669', // Emerald 600 - trust, growth, nature
-                        secondary: '#10b981', // Emerald 500 - harmony, balance
-                        accent: '#f59e0b', // Amber 500 - energy, optimism, attention
-                        success: '#22c55e', // Green 500 - achievement, progress
-                        info: '#3b82f6', // Blue 500 - intelligence, reliability, focus
-                        warning: '#f59e0b', // Amber 500 - attention, caution
-                        danger: '#ef4444', // Red 500 - urgency, importance
-                        // Learning-specific colors
-                        'learn-focus': '#6366f1', // Indigo 500 - concentration, deep thinking
-                        'learn-easy': '#22c55e', // Green 500 - beginner friendly, safe
-                        'learn-medium': '#f59e0b', // Amber 500 - moderate challenge
-                        'learn-hard': '#dc2626', // Red 600 - advanced, challenging
-                        'learn-calm': '#8b5cf6', // Violet 500 - creativity, calm learning
-                        // Neutral colors for clean design
-                        'gray-warm': '#6b7280', // Warm gray for text
-                        'gray-cool': '#64748b', // Cool gray for subtle elements
+                        // Professional & Clean Color Palette
+                        primary: '#1e293b', // Slate 800 - professional, trustworthy
+                        secondary: '#475569', // Slate 600 - sophisticated secondary
+                        accent: '#0f766e', // Teal 700 - subtle accent, professional
+                        success: '#059669', // Emerald 600 - success states
+                        info: '#0369a1', // Sky 700 - informational
+                        warning: '#ca8a04', // Yellow 600 - warnings
+                        danger: '#dc2626', // Red 600 - errors
+                        // Learning levels - muted and professional
+                        'level-basic': '#10b981', // Emerald 500 - approachable
+                        'level-intermediate': '#0891b2', // Cyan 600 - confident
+                        'level-advanced': '#7c3aed', // Violet 600 - sophisticated
+                        // Neutral palette for clean design
+                        'text-primary': '#0f172a', // Slate 900 - main text
+                        'text-secondary': '#475569', // Slate 600 - secondary text
+                        'text-muted': '#64748b', // Slate 500 - muted text
+                        'border-light': '#e2e8f0', // Slate 200 - light borders
+                        'bg-subtle': '#f8fafc', // Slate 50 - subtle backgrounds
                     },
                     animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease-out',
-                        'fade-in-down': 'fadeInDown 0.6s ease-out',
-                        'scale-in': 'scaleIn 0.5s ease-out',
-                        'slide-in-up': 'slideInUp 0.4s ease-out',
-                        'bounce-gentle': 'bounceGentle 2s infinite',
-                        'pulse-soft': 'pulseSoft 3s infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate'
+                        'fade-in': 'fadeIn 0.3s ease-out'
                     }
                 }
             }
@@ -47,7 +42,7 @@
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 min-h-screen page-edukasi">
+<body class="bg-white min-h-screen page-edukasi">
     <!-- Navigation -->
     <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 fade-in-down">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,197 +79,118 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <section class="relative bg-gradient-to-br from-learn-focus via-primary to-learn-calm text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
-        
-        <!-- Learning motivation elements -->
-        <div class="absolute top-10 left-10 w-8 h-8 bg-accent/30 rounded-full animate-pulse-soft"></div>
-        <div class="absolute top-20 right-20 w-6 h-6 bg-white/20 rounded-full animate-bounce-gentle"></div>
-        <div class="absolute bottom-20 left-16 w-4 h-4 bg-accent/40 rounded-full animate-glow"></div>
-        
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <!-- Main Heading with Learning Psychology -->
-                <div class="mb-6" data-animation="fade-in-up">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-6 animate-glow">
-                        <i class="fas fa-graduation-cap text-3xl text-accent"></i>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                        <span class="block fade-in-up stagger-1">Pusat Pembelajaran</span>
-                        <span class="block text-accent fade-in-up stagger-2 animate-glow">Hidroponik</span>
+    <!-- Clean Professional Header -->
+    <section class="bg-white border-b border-border-light py-16 sm:py-20 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Clean Heading -->
+                <div class="mb-8">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight tracking-tight">
+                        Pusat Edukasi<br>
+                        <span class="text-accent">Hidroponik</span>
                     </h1>
-                    <div class="w-24 h-1 bg-accent mx-auto rounded-full mt-4 animate-pulse-soft"></div>
-                </div>
-                
-                <!-- Subtitle with Motivational Psychology -->
-                <div class="mb-8" data-animation="fade-in-up" data-delay="600">
-                    <p class="text-lg sm:text-xl lg:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed">
-                        Mulai perjalanan pembelajaran Anda dari <span class="text-accent font-semibold bg-white/10 px-2 py-1 rounded">pemula hingga ahli</span> 
-                        dengan panduan interaktif yang dirancang khusus untuk <span class="text-white font-semibold">kesuksesan Anda</span>
+                    <p class="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                        Pelajari teknik budidaya hidroponik modern dengan panduan komprehensif dari para ahli
                     </p>
                 </div>
                 
-                <!-- Achievement Stats with Psychology -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-5xl mx-auto mb-8" data-animation="fade-in-up" data-delay="900">
-                    <div class="stats-card bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                        <div class="flex items-center justify-center w-12 h-12 bg-accent/20 rounded-xl mb-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-play text-accent text-xl"></i>
-                        </div>
-                        <div class="text-2xl lg:text-3xl font-bold text-accent mb-1 group-hover:animate-pulse">500+</div>
-                        <div class="text-sm lg:text-base opacity-90 font-medium">Video Tutorial</div>
-                        <div class="text-xs opacity-70 mt-1">Pembelajaran Interaktif</div>
+                <!-- Clean Stats Section -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">500+</div>
+                        <div class="text-text-secondary font-medium">Video Tutorial</div>
                     </div>
-                    <div class="stats-card bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                        <div class="flex items-center justify-center w-12 h-12 bg-success/20 rounded-xl mb-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-file-alt text-success text-xl"></i>
-                        </div>
-                        <div class="text-2xl lg:text-3xl font-bold text-success mb-1 group-hover:animate-pulse">50+</div>
-                        <div class="text-sm lg:text-base opacity-90 font-medium">Panduan PDF</div>
-                        <div class="text-xs opacity-70 mt-1">Referensi Lengkap</div>
+                    <div class="text-center">
+                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">50+</div>
+                        <div class="text-text-secondary font-medium">Panduan PDF</div>
                     </div>
-                    <div class="stats-card bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                        <div class="flex items-center justify-center w-12 h-12 bg-info/20 rounded-xl mb-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-users text-info text-xl"></i>
-                        </div>
-                        <div class="text-2xl lg:text-3xl font-bold text-info mb-1 group-hover:animate-pulse">10K+</div>
-                        <div class="text-sm lg:text-base opacity-90 font-medium">Siswa Aktif</div>
-                        <div class="text-xs opacity-70 mt-1">Komunitas Belajar</div>
+                    <div class="text-center">
+                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">10K+</div>
+                        <div class="text-text-secondary font-medium">Siswa Aktif</div>
                     </div>
-                    <div class="stats-card bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
-                        <div class="flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl mb-3 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-trophy text-white text-xl"></i>
-                        </div>
-                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1 group-hover:animate-pulse">95%</div>
-                        <div class="text-sm lg:text-base opacity-90 font-medium">Tingkat Sukses</div>
-                        <div class="text-xs opacity-70 mt-1">Pencapaian Luar Biasa</div>
+                    <div class="text-center">
+                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">95%</div>
+                        <div class="text-text-secondary font-medium">Tingkat Sukses</div>
                     </div>
                 </div>
                 
-                <!-- CTA Button -->
-                <div class="fade-in-up stagger-5" data-animation="fade-in-up" data-delay="1200">
-                    <button onclick="scrollToContent()" class="btn btn-gradient-nature btn-xl">
-                        <i class="fas fa-play btn-icon"></i>
-                        <span>Mulai Belajar Sekarang</span>
-                        <i class="fas fa-arrow-down btn-icon btn-icon-right"></i>
+                <!-- Clean CTA -->
+                <div class="mt-12">
+                    <button onclick="scrollToContent()" class="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                        Mulai Belajar
                     </button>
                 </div>
             </div>
         </div>
-        
-        <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
-        <div class="absolute top-32 right-16 w-6 h-6 bg-yellow-300/30 rounded-full animate-bounce" style="animation-delay: 0.5s;"></div>
-        <div class="absolute bottom-20 left-20 w-3 h-3 bg-white/20 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
-        <div class="absolute bottom-32 right-10 w-5 h-5 bg-yellow-300/30 rounded-full animate-bounce" style="animation-delay: 1.5s;"></div>
     </section>
 
-    <!-- Learning Path Filter Tabs -->
-    <div id="content-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="text-center mb-8">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Pilih Jalur Pembelajaran Anda</h2>
-            <p class="text-gray-warm text-lg">Mulai dari level yang sesuai dengan kemampuan Anda</p>
-        </div>
-        <div class="flex flex-wrap gap-4 justify-center mb-8">
-            <button class="filter-btn btn bg-primary text-white border-primary hover:bg-primary/90 active" data-filter="all">
-                <i class="fas fa-list btn-icon"></i>
-                <span>Semua Materi</span>
-                <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse-soft"></div>
-            </button>
-            <button class="filter-btn btn bg-white text-learn-easy border-learn-easy hover:bg-learn-easy hover:text-white transition-all duration-300" data-filter="beginner">
-                <i class="fas fa-seedling btn-icon"></i>
-                <span>Pemula</span>
-                <span class="ml-2 text-xs bg-learn-easy/20 text-learn-easy px-2 py-1 rounded-full">Mudah</span>
-            </button>
-            <button class="filter-btn btn bg-white text-learn-medium border-learn-medium hover:bg-learn-medium hover:text-white transition-all duration-300" data-filter="intermediate">
-                <i class="fas fa-leaf btn-icon"></i>
-                <span>Menengah</span>
-                <span class="ml-2 text-xs bg-learn-medium/20 text-learn-medium px-2 py-1 rounded-full">Sedang</span>
-            </button>
-            <button class="filter-btn btn bg-white text-learn-hard border-learn-hard hover:bg-learn-hard hover:text-white transition-all duration-300" data-filter="advanced">
-                <i class="fas fa-tree btn-icon"></i>
-                <span>Lanjutan</span>
-                <span class="ml-2 text-xs bg-learn-hard/20 text-learn-hard px-2 py-1 rounded-full">Sulit</span>
-            </button>
-        </div>
-        
-        <!-- Learning Progress Indicator -->
-        <div class="max-w-2xl mx-auto">
-            <div class="flex items-center justify-between text-sm text-gray-500 mb-2">
-                <span>Progres Pembelajaran</span>
-                <span id="progress-text">0% Selesai</span>
+    <!-- Clean Filter Section -->
+    <div id="content-section" class="bg-bg-subtle py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Materi Pembelajaran</h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">Pilih kategori materi sesuai dengan tingkat keahlian Anda</p>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-                <div id="progress-bar" class="bg-gradient-to-r from-learn-easy via-learn-medium to-learn-hard h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+            
+            <!-- Professional Filter Tabs -->
+            <div class="flex flex-wrap gap-2 justify-center mb-12">
+                <button class="filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-primary text-white active" data-filter="all">
+                    Semua Materi
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-basic hover:text-level-basic" data-filter="beginner">
+                    Pemula
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-intermediate hover:text-level-intermediate" data-filter="intermediate">
+                    Menengah
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-advanced hover:text-level-advanced" data-filter="advanced">
+                    Lanjutan
+                </button>
             </div>
         </div>
     </div>
 
     <!-- Content Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Video Tutorial 1 - Enhanced Psychology -->
-            <div class="content-item bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-learn-easy/20 hover:border-learn-easy/40 group" data-category="beginner">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Video Tutorial 1 - Clean Professional -->
+            <div class="content-item bg-white rounded-lg shadow-sm border border-border-light hover:shadow-md transition-all duration-200 group" data-category="beginner">
                 <div class="relative">
-                    <div class="aspect-video bg-gradient-to-br from-learn-easy via-primary to-success flex items-center justify-center relative overflow-hidden cursor-pointer" onclick="playVideo('beginner-intro')">
-                        <div class="text-center text-white z-10">
-                            <div class="relative">
-                                <i class="fas fa-play-circle text-6xl mb-2 opacity-90 group-hover:scale-110 transition-transform duration-300 hover:text-accent"></i>
-                                <div class="absolute inset-0 bg-white/20 rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>
-                            </div>
-                            <p class="text-sm font-medium">Video Tutorial Interaktif</p>
-                            <div class="w-16 h-1 bg-accent mx-auto mt-2 rounded-full"></div>
+                    <div class="aspect-video bg-gray-100 flex items-center justify-center cursor-pointer" onclick="playVideo('beginner-intro')">
+                        <div class="text-center">
+                            <i class="fas fa-play-circle text-4xl text-primary mb-2 group-hover:text-accent transition-colors duration-200"></i>
+                            <p class="text-sm text-text-secondary font-medium">Video Tutorial</p>
                         </div>
-                        <!-- Animated background pattern -->
-                        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
                     </div>
-                    <div class="absolute top-3 right-3 bg-learn-easy text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse-soft">
-                        <i class="fas fa-seedling mr-1"></i>Pemula
+                    <div class="absolute top-3 right-3 bg-level-basic text-white px-3 py-1 rounded-md text-xs font-medium">
+                        Pemula
                     </div>
-                    <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-learn-easy px-3 py-1 rounded-full text-xs font-semibold">
-                        <i class="fas fa-star mr-1 text-accent"></i>4.9
-                    </div>
-                    <div class="absolute bottom-3 left-3 bg-accent/90 text-white px-2 py-1 rounded-full text-xs font-medium">
-                        <i class="fas fa-gift mr-1"></i>GRATIS
+                    <div class="absolute top-3 left-3 bg-white/90 text-text-primary px-3 py-1 rounded-md text-xs font-medium">
+                        ★ 4.9
                     </div>
                 </div>
                 <div class="p-6">
-                    <div class="flex items-start justify-between mb-3">
-                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-learn-easy transition-colors leading-tight">
-                            Pengenalan Hidroponik untuk Pemula
-                        </h3>
-                        <div class="flex items-center ml-2">
-                            <div class="w-2 h-2 bg-learn-easy rounded-full animate-pulse-soft"></div>
-                        </div>
-                    </div>
-                    <p class="text-gray-warm mb-4 leading-relaxed">
-                        Mulai perjalanan hidroponik Anda dengan <span class="text-learn-easy font-semibold">panduan step-by-step</span> yang mudah dipahami. 
-                        Pelajari dasar-dasar sistem dan persiapan awal untuk <span class="text-primary font-medium">kesuksesan pertama Anda</span>.
+                    <h3 class="text-xl font-semibold text-text-primary mb-3 leading-tight">
+                        Pengenalan Hidroponik untuk Pemula
+                    </h3>
+                    <p class="text-text-secondary mb-4 leading-relaxed">
+                        Pelajari dasar-dasar sistem hidroponik, jenis tanaman yang cocok, dan persiapan awal untuk memulai kebun hidroponik Anda.
                     </p>
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-4 text-sm">
-                            <span class="flex items-center text-learn-easy">
-                                <i class="fas fa-clock mr-1"></i>15 menit
-                            </span>
-                            <span class="flex items-center text-info">
-                                <i class="fas fa-users mr-1"></i>1.2k siswa
-                            </span>
-                            <span class="flex items-center text-accent">
-                                <i class="fas fa-certificate mr-1"></i>Sertifikat
-                            </span>
-                        </div>
+                    <div class="flex items-center gap-4 text-sm text-text-muted mb-4">
+                        <span class="flex items-center">
+                            <i class="fas fa-clock mr-1"></i>15 menit
+                        </span>
+                        <span class="flex items-center">
+                            <i class="fas fa-users mr-1"></i>1.2k siswa
+                        </span>
+                        <span class="text-success font-medium">Gratis</span>
                     </div>
                     <div class="flex gap-3">
-                        <button onclick="playVideo('beginner-intro')" class="flex-1 btn bg-learn-easy text-white hover:bg-learn-easy/90 transition-all duration-300 group/btn">
-                            <i class="fas fa-play btn-icon group-hover/btn:animate-bounce-gentle"></i>
-                            <span>Mulai Belajar</span>
+                        <button onclick="playVideo('beginner-intro')" class="flex-1 bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200">
+                            Mulai Belajar
                         </button>
-                        <button onclick="bookmarkContent('beginner-intro')" class="btn bg-gray-100 text-gray-600 hover:bg-accent hover:text-white transition-all duration-300 px-4">
+                        <button onclick="bookmarkContent('beginner-intro')" class="p-2 text-text-muted hover:text-accent transition-colors duration-200">
                             <i class="fas fa-bookmark"></i>
-                        </button>
-                        <button onclick="shareContent('beginner-intro')" class="btn bg-gray-100 text-gray-600 hover:bg-info hover:text-white transition-all duration-300 px-4">
-                            <i class="fas fa-share"></i>
                         </button>
                     </div>
                 </div>
@@ -541,22 +457,12 @@
     <!-- Bottom Navigation -->
     <script src="js/bottom-nav.js"></script>
     
-    <!-- Enhanced Styles for Learning Psychology -->
+    <!-- Clean Professional Styles -->
     <style>
-        /* Learning Psychology Animations */
-        @keyframes bounceGentle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-4px); }
-        }
-        
-        @keyframes pulseSoft {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-        }
-        
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.3); }
-            100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.6), 0 0 30px rgba(245, 158, 11, 0.4); }
+        /* Minimal animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         /* Bottom Navigation Styles */
@@ -567,18 +473,18 @@
         }
         
         .bottom-nav-item.active {
-            color: #059669;
+            color: #1e293b;
         }
         
         .bottom-nav-item.active .bottom-nav-icon-container {
-            background: linear-gradient(135deg, #059669, #10b981);
+            background: #1e293b;
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
         }
         
         .bottom-nav-item.active .bottom-nav-label {
-            color: #059669;
+            color: #1e293b;
             font-weight: 600;
         }
         
@@ -599,7 +505,7 @@
         }
         
         .bottom-nav-item:not(.active):hover {
-            color: #059669;
+            color: #1e293b;
         }
         
         /* Active indicator */
@@ -611,9 +517,8 @@
             transform: translateX(-50%);
             width: 4px;
             height: 4px;
-            background: #059669;
+            background: #1e293b;
             border-radius: 50%;
-            animation: pulseSoft 2s infinite;
         }
         
         /* Body padding for bottom nav */
@@ -673,13 +578,13 @@
                     // Reset to default styles based on data-filter
                     const filter = b.dataset.filter;
                     if (filter === 'all') {
-                        b.className = 'filter-btn btn bg-white text-primary border-primary hover:bg-primary hover:text-white transition-all duration-300';
+                        b.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:bg-primary hover:text-white';
                     } else if (filter === 'beginner') {
-                        b.className = 'filter-btn btn bg-white text-learn-easy border-learn-easy hover:bg-learn-easy hover:text-white transition-all duration-300';
+                        b.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-basic hover:text-level-basic';
                     } else if (filter === 'intermediate') {
-                        b.className = 'filter-btn btn bg-white text-learn-medium border-learn-medium hover:bg-learn-medium hover:text-white transition-all duration-300';
+                        b.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-intermediate hover:text-level-intermediate';
                     } else if (filter === 'advanced') {
-                        b.className = 'filter-btn btn bg-white text-learn-hard border-learn-hard hover:bg-learn-hard hover:text-white transition-all duration-300';
+                        b.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-advanced hover:text-level-advanced';
                     }
                 });
                 
@@ -687,13 +592,13 @@
                 btn.classList.add('active');
                 const filter = btn.dataset.filter;
                 if (filter === 'all') {
-                    btn.className = 'filter-btn btn bg-primary text-white border-primary hover:bg-primary/90 active';
+                    btn.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-primary text-white active';
                 } else if (filter === 'beginner') {
-                    btn.className = 'filter-btn btn bg-learn-easy text-white border-learn-easy hover:bg-learn-easy/90 active';
+                    btn.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-level-basic text-white active';
                 } else if (filter === 'intermediate') {
-                    btn.className = 'filter-btn btn bg-learn-medium text-white border-learn-medium hover:bg-learn-medium/90 active';
+                    btn.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-level-intermediate text-white active';
                 } else if (filter === 'advanced') {
-                    btn.className = 'filter-btn btn bg-learn-hard text-white border-learn-hard hover:bg-learn-hard/90 active';
+                    btn.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-level-advanced text-white active';
                 }
                 
                 this.currentFilter = filter;
