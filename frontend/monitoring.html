@@ -228,43 +228,25 @@
                     <div class="stats-label">Total Tanaman</div>
                 </div>
 
-                <!-- Log Hari Ini -->
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105  cursor-pointer"
-                      
-                     
-                     
-                     >
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">📝</div>
-                        <div class="text-3xl font-bold text-blue-600 group-hover:text-blue-700 transition-colors" id="total-logs">8</div>
-                        <div class="text-gray-600 text-sm font-medium">Log Hari Ini</div>
-                    </div>
+                                <!-- Log Hari Ini -->
+                <div class="stats-card">
+                    <div class="stats-icon">📝</div>
+                    <div class="stats-number" id="total-logs">8</div>
+                    <div class="stats-label">Log Hari Ini</div>
                 </div>
 
-                <!-- Sedang Tumbuh -->
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105  cursor-pointer"
-                      
-                     
-                     
-                     >
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">🌿</div>
-                        <div class="text-3xl font-bold text-orange-600 group-hover:text-orange-700 transition-colors" id="active-plants">9</div>
-                        <div class="text-gray-600 text-sm font-medium">Sedang Tumbuh</div>
-                    </div>
+                                <!-- Sedang Tumbuh -->
+                <div class="stats-card">
+                    <div class="stats-icon">🌿</div>
+                    <div class="stats-number" id="active-plants">9</div>
+                    <div class="stats-label">Sedang Tumbuh</div>
                 </div>
 
-                <!-- Siap Panen -->
-                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105  cursor-pointer"
-                      
-                     
-                     
-                     >
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">🥬</div>
-                        <div class="text-3xl font-bold text-green-600 group-hover:text-green-700 transition-colors" id="harvest-ready">3</div>
-                        <div class="text-gray-600 text-sm font-medium">Siap Panen</div>
-                    </div>
+                                <!-- Siap Panen -->
+                <div class="stats-card">
+                    <div class="stats-icon">🥬</div>
+                    <div class="stats-number" id="harvest-ready">3</div>
+                    <div class="stats-label">Siap Panen</div>
                 </div>
             </div>
         </div>
@@ -781,22 +763,8 @@
             }, 3000);
         }
         
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-
         // Set default date to today
         document.getElementById('plant-date').valueAsDate = new Date();
     </script>
-        <i class="fas fa-bolt"></i>
-    </button>
-
-    <!-- Mobile Navigation -->
-    <script src="js/mobile-nav.js"></script>
-    <!-- Animation Scripts -->
-    <script src="js/animations.js"></script>
-    <!-- Pop-up Controller -->
 </body>
 </html>
