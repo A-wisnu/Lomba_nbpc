@@ -14,23 +14,49 @@
             theme: {
                 extend: {
                     colors: {
-                        // Professional & Clean Color Palette (Same as homepage)
-                        primary: '#1e293b', // Slate 800 - professional, trustworthy
-                        secondary: '#475569', // Slate 600 - sophisticated secondary
-                        accent: '#0f766e', // Teal 700 - subtle accent, professional
-                        success: '#059669', // Emerald 600 - success states
-                        info: '#0369a1', // Sky 700 - informational
-                        warning: '#ca8a04', // Yellow 600 - warnings
-                        danger: '#dc2626', // Red 600 - errors
-                        // Neutral palette for clean design
-                        'text-primary': '#0f172a', // Slate 900 - main text
+                        // Colorful Monitoring Dashboard Palette
+                        primary: '#0ea5e9', // Sky 500 - data, analytics, clarity
+                        secondary: '#06b6d4', // Cyan 500 - fresh, modern, tech
+                        accent: '#10b981', // Emerald 500 - growth, healthy plants
+                        success: '#22c55e', // Green 500 - optimal conditions
+                        info: '#3b82f6', // Blue 500 - information, data
+                        warning: '#f59e0b', // Amber 500 - attention, alerts
+                        danger: '#ef4444', // Red 500 - critical, problems
+                        
+                        // Monitoring Specific Colors
+                        'monitor-primary': '#0ea5e9', // Sky 500 - main monitoring color
+                        'monitor-secondary': '#06b6d4', // Cyan 500 - secondary data
+                        'monitor-accent': '#8b5cf6', // Violet 500 - advanced features
+                        'monitor-success': '#10b981', // Emerald 500 - healthy status
+                        'monitor-warning': '#f59e0b', // Amber 500 - caution
+                        'monitor-danger': '#ef4444', // Red 500 - critical alerts
+                        
+                        // Data Visualization Colors
+                        'chart-blue': '#3b82f6', // Blue 500 - temperature
+                        'chart-green': '#22c55e', // Green 500 - pH levels
+                        'chart-purple': '#8b5cf6', // Violet 500 - nutrients
+                        'chart-orange': '#f97316', // Orange 500 - light levels
+                        'chart-cyan': '#06b6d4', // Cyan 500 - humidity
+                        'chart-pink': '#ec4899', // Pink 500 - growth rate
+                        
+                        // Enhanced Text Colors
+                        'text-primary': '#1e293b', // Slate 800 - main text
                         'text-secondary': '#475569', // Slate 600 - secondary text
                         'text-muted': '#64748b', // Slate 500 - muted text
                         'border-light': '#e2e8f0', // Slate 200 - light borders
                         'bg-subtle': '#f8fafc', // Slate 50 - subtle backgrounds
+                        'bg-gradient-start': '#dbeafe', // Blue 100 - gradient start
+                        'bg-gradient-end': '#ecfdf5', // Green 100 - gradient end
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.3s ease-out'
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'pop-in': 'popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
                     }
                 }
             }
@@ -75,48 +101,99 @@
         </div>
     </nav>
 
-    <!-- Clean Professional Header -->
-    <section class="bg-white border-b border-border-light py-16 sm:py-20 lg:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <!-- Clean Heading -->
+    <!-- Colorful Monitoring Dashboard Header -->
+    <section class="relative bg-gradient-to-br from-monitor-primary via-primary to-monitor-secondary text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M40 40m-20 0a20,20 0 1,1 40,0a20,20 0 1,1 -40,0M40 20v40M20 40h40"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        
+        <!-- Floating Dashboard Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center animate-float">
+            <i class="fas fa-chart-line text-2xl text-white/70"></i>
+        </div>
+        <div class="absolute top-32 right-16 w-16 h-16 bg-monitor-accent/20 rounded-2xl flex items-center justify-center animate-pulse-soft">
+            <i class="fas fa-thermometer-half text-xl text-white/70"></i>
+        </div>
+        <div class="absolute bottom-20 left-20 w-14 h-14 bg-monitor-success/20 rounded-2xl flex items-center justify-center animate-bounce-gentle">
+            <i class="fas fa-leaf text-lg text-white/70"></i>
+        </div>
+        <div class="absolute bottom-32 right-10 w-18 h-18 bg-chart-pink/20 rounded-2xl flex items-center justify-center animate-float">
+            <i class="fas fa-seedling text-xl text-white/70"></i>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto text-center">
+                <!-- Dashboard Header -->
                 <div class="mb-8">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight tracking-tight">
-                        Monitoring<br>
-                        <span class="text-accent">Tanaman Hidroponik</span>
+                    <div class="inline-flex items-center justify-center w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl mb-6 animate-glow">
+                        <i class="fas fa-desktop text-4xl text-monitor-success"></i>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                        <span class="block">Dashboard</span>
+                        <span class="block bg-gradient-to-r from-monitor-secondary to-monitor-success bg-clip-text text-transparent">Monitoring</span>
                     </h1>
-                    <p class="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-                        Pantau dan kelola perkembangan tanaman hidroponik Anda dengan dashboard yang komprehensif
+                    <p class="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                        Pantau kondisi real-time tanaman hidroponik Anda dengan teknologi IoT dan analisis data cerdas
                     </p>
                 </div>
                 
-                <!-- Clean Stats Section -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-4xl mx-auto mb-8">
-                    <div class="text-center">
-                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">24</div>
-                        <div class="text-text-secondary font-medium">Tanaman Aktif</div>
+                <!-- Real-time Stats Dashboard -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto mb-8 dashboard-stats">
+                    <!-- Temperature Card -->
+                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group dashboard-card stagger-1">
+                        <div class="w-14 h-14 bg-chart-orange/30 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-thermometer-half text-chart-orange text-2xl"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-bold text-white mb-2">24°C</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Suhu Optimal</div>
+                        <div class="w-full bg-white/20 rounded-full h-2 mt-3">
+                            <div class="bg-gradient-to-r from-chart-orange to-warning h-2 rounded-full progress-bar" style="width: 80%"></div>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">18°C</div>
-                        <div class="text-text-secondary font-medium">Suhu Rata-rata</div>
+                    
+                    <!-- pH Level Card -->
+                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group dashboard-card stagger-2">
+                        <div class="w-14 h-14 bg-chart-green/30 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-flask text-chart-green text-2xl"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-bold text-white mb-2">6.8</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">pH Level</div>
+                        <div class="w-full bg-white/20 rounded-full h-2 mt-3">
+                            <div class="bg-gradient-to-r from-chart-green to-monitor-success h-2 rounded-full progress-bar" style="width: 90%"></div>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">6.8</div>
-                        <div class="text-text-secondary font-medium">pH Optimal</div>
+                    
+                    <!-- Active Plants Card -->
+                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group dashboard-card stagger-3">
+                        <div class="w-14 h-14 bg-monitor-success/30 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-seedling text-monitor-success text-2xl"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-bold text-white mb-2">24</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Tanaman Aktif</div>
+                        <div class="w-full bg-white/20 rounded-full h-2 mt-3">
+                            <div class="bg-gradient-to-r from-monitor-success to-accent h-2 rounded-full progress-bar" style="width: 95%"></div>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">92%</div>
-                        <div class="text-text-secondary font-medium">Kesehatan</div>
+                    
+                    <!-- System Health Card -->
+                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group dashboard-card stagger-4">
+                        <div class="w-14 h-14 bg-chart-cyan/30 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-heartbeat text-chart-cyan text-2xl"></i>
+                        </div>
+                        <div class="text-3xl lg:text-4xl font-bold text-white mb-2">98%</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Kesehatan Sistem</div>
+                        <div class="w-full bg-white/20 rounded-full h-2 mt-3">
+                            <div class="bg-gradient-to-r from-chart-cyan to-monitor-secondary h-2 rounded-full progress-bar" style="width: 98%"></div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Clean Action Buttons -->
+                <!-- Dashboard Action Buttons -->
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <button onclick="addPlant()" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200">
-                        <i class="fas fa-plus mr-2"></i>Tambah Tanaman
+                    <button onclick="addPlant()" class="bg-gradient-to-r from-monitor-success to-accent text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group">
+                        <i class="fas fa-plus mr-2 group-hover:animate-bounce"></i>Tambah Tanaman
                     </button>
-                    <button onclick="viewReports()" class="bg-white text-primary border border-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-200">
-                        <i class="fas fa-chart-line mr-2"></i>
+                    <button onclick="viewReports()" class="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white/30 hover:scale-105 transition-all duration-300 group">
+                        <i class="fas fa-chart-line mr-2 group-hover:animate-pulse"></i>
                         <span>Lihat Analisis</span>
                     </button>
                     <button class="btn">
@@ -442,12 +519,152 @@
     <!-- Bottom Navigation -->
     <script src="js/bottom-nav.js"></script>
     <script src="js/logbook.js"></script>
-    <!-- Clean Professional Styles -->
+    <!-- Colorful Monitoring Dashboard Styles -->
     <style>
-        /* Minimal animations */
+        /* Enhanced Pop-up Animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.08); opacity: 0.8; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(2deg); }
+            50% { transform: translateY(-8px) rotate(0deg); }
+            75% { transform: translateY(-12px) rotate(-2deg); }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(14, 165, 233, 0.5); }
+            100% { box-shadow: 0 0 25px rgba(14, 165, 233, 0.8), 0 0 40px rgba(14, 165, 233, 0.6); }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(50px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+        
+        @keyframes scaleIn {
+            from { 
+                opacity: 0; 
+                transform: scale(0.8) rotate(-5deg); 
+            }
+            to { 
+                opacity: 1; 
+                transform: scale(1) rotate(0deg); 
+            }
+        }
+        
+        @keyframes popIn {
+            0% { 
+                opacity: 0; 
+                transform: scale(0.5) translateY(50px); 
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: scale(1.1) translateY(-10px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: scale(1) translateY(0); 
+            }
+        }
+        
+        /* Staggered Animation Classes */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+        
+        /* Enhanced Dashboard Cards */
+        .dashboard-card {
+            animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation-fill-mode: both;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        /* Progress Bar Animations */
+        .progress-bar {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.3) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0.3) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 20px 20px;
+            animation: moveStripes 1s linear infinite;
+        }
+        
+        @keyframes moveStripes {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 20px; }
+        }
+        
+        /* Floating Elements Animation */
+        .floating-element {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(2) { animation-delay: -1s; }
+        .floating-element:nth-child(3) { animation-delay: -2s; }
+        .floating-element:nth-child(4) { animation-delay: -3s; }
+        
+        /* Button Hover Effects */
+        .dashboard-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dashboard-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .dashboard-btn:hover::before {
+            left: 100%;
         }
         
         /* Bottom Navigation Styles */
@@ -458,18 +675,18 @@
         }
         
         .bottom-nav-item.active {
-            color: #1e293b;
+            color: #0ea5e9;
         }
         
         .bottom-nav-item.active .bottom-nav-icon-container {
-            background: #1e293b;
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
         }
         
         .bottom-nav-item.active .bottom-nav-label {
-            color: #1e293b;
+            color: #0ea5e9;
             font-weight: 600;
         }
         
@@ -490,7 +707,7 @@
         }
         
         .bottom-nav-item:not(.active):hover {
-            color: #1e293b;
+            color: #0ea5e9;
         }
         
         /* Active indicator */
@@ -502,8 +719,9 @@
             transform: translateX(-50%);
             width: 4px;
             height: 4px;
-            background: #1e293b;
+            background: #0ea5e9;
             border-radius: 50%;
+            box-shadow: 0 0 8px rgba(14, 165, 233, 0.6);
         }
         
         /* Body padding for bottom nav */
