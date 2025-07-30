@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edukasi - LABTANAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/mobile-nav.css">
     <script>
         tailwind.config = {
             theme: {
@@ -13,6 +15,12 @@
                         primary: '#16a34a',
                         secondary: '#22c55e',
                         accent: '#84cc16',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in-down': 'fadeInDown 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                        'slide-in-up': 'slideInUp 0.4s ease-out'
                     }
                 }
             }
@@ -22,44 +30,130 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 fade-in-down">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <a href="index.html" class="text-2xl font-bold text-primary">🌱 LABTANAM</a>
+                    <div class="flex-shrink-0 hover-scale">
+                        <a href="index.html" class="text-2xl font-bold text-primary">
+                            <i class="fas fa-leaf mr-2 text-accent pulse"></i>
+                            <span class="text-reveal">LABTANAM</span>
+                        </a>
                     </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Beranda</a>
-                    <a href="edukasi.html" class="text-primary font-medium border-b-2 border-primary pb-1">Edukasi</a>
-                    <a href="monitoring.html" class="text-gray-700 hover:text-primary transition-colors">Monitoring</a>
-                    <a href="chatbot.html" class="text-gray-700 hover:text-primary transition-colors">ChatBot AI</a>
-                    <a href="komunitas.html" class="text-gray-700 hover:text-primary transition-colors">Komunitas</a>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 btn-animate">
+                        <i class="fas fa-home mr-1"></i>Beranda
+                    </a>
+                    <a href="edukasi.html" class="nav-link text-primary font-medium border-b-2 border-primary pb-1 px-3 py-2 rounded-lg btn-animate">
+                        <i class="fas fa-graduation-cap mr-1"></i>Edukasi
+                    </a>
+                    <a href="monitoring.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 btn-animate">
+                        <i class="fas fa-chart-line mr-1"></i>Monitoring
+                    </a>
+                    <a href="chatbot.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 btn-animate">
+                        <i class="fas fa-robot mr-1"></i>ChatBot AI
+                    </a>
+                    <a href="komunitas.html" class="nav-link text-gray-700 hover:text-primary transition-all duration-300 px-3 py-2 rounded-lg hover:bg-green-50 btn-animate">
+                        <i class="fas fa-users mr-1"></i>Komunitas
+                    </a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-700">
-                        <i class="fas fa-bars text-xl"></i>
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary focus:outline-none p-2 rounded-lg hover:bg-green-50 btn-animate transition-all duration-300">
+                        <div class="hamburger-icon">
+                            <span class="block w-6 h-0.5 bg-current mb-1 transition-all duration-300"></span>
+                            <span class="block w-6 h-0.5 bg-current mb-1 transition-all duration-300"></span>
+                            <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
+                        </div>
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="mobile-nav-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-green-50 rounded-lg transition-all duration-300 btn-animate">
+                    <i class="fas fa-home mr-3 w-5"></i>Beranda
+                </a>
+                <a href="edukasi.html" class="mobile-nav-link block px-3 py-3 text-primary font-medium bg-green-50 rounded-lg btn-animate">
+                    <i class="fas fa-graduation-cap mr-3 w-5"></i>Edukasi
+                </a>
+                <a href="monitoring.html" class="mobile-nav-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-green-50 rounded-lg transition-all duration-300 btn-animate">
+                    <i class="fas fa-chart-line mr-3 w-5"></i>Monitoring
+                </a>
+                <a href="chatbot.html" class="mobile-nav-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-green-50 rounded-lg transition-all duration-300 btn-animate">
+                    <i class="fas fa-robot mr-3 w-5"></i>ChatBot AI
+                </a>
+                <a href="komunitas.html" class="mobile-nav-link block px-3 py-3 text-gray-700 hover:text-primary hover:bg-green-50 rounded-lg transition-all duration-300 btn-animate">
+                    <i class="fas fa-users mr-3 w-5"></i>Komunitas
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Header -->
-    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="relative bg-gradient-to-br from-primary via-secondary to-accent text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Pusat Edukasi Hidroponik</h1>
-                <p class="text-xl opacity-90 max-w-3xl mx-auto">
-                    Pelajari semua tentang budidaya hidroponik dari dasar hingga mahir dengan video tutorial dan panduan lengkap
-                </p>
+                <!-- Main Heading -->
+                <div class="mb-6" data-animation="fade-in-up">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                        <span class="block fade-in-up stagger-1">Pusat Edukasi</span>
+                        <span class="block text-yellow-300 fade-in-up stagger-2">Hidroponik</span>
+                    </h1>
+                </div>
+                
+                <!-- Subtitle -->
+                <div class="mb-8" data-animation="fade-in-up" data-delay="600">
+                    <p class="text-lg sm:text-xl lg:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed">
+                        Pelajari semua tentang budidaya hidroponik dari <span class="text-yellow-300 font-semibold">dasar hingga mahir</span> 
+                        dengan video tutorial dan panduan lengkap dari para ahli
+                    </p>
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-4xl mx-auto mb-8" data-animation="fade-in-up" data-delay="900">
+                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 hover-lift">
+                        <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">500+</div>
+                        <div class="text-sm lg:text-base opacity-80">Video Tutorial</div>
+                    </div>
+                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 hover-lift">
+                        <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">50+</div>
+                        <div class="text-sm lg:text-base opacity-80">Panduan PDF</div>
+                    </div>
+                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 hover-lift">
+                        <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">10K+</div>
+                        <div class="text-sm lg:text-base opacity-80">Siswa Aktif</div>
+                    </div>
+                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 hover-lift">
+                        <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">95%</div>
+                        <div class="text-sm lg:text-base opacity-80">Tingkat Sukses</div>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="fade-in-up stagger-5" data-animation="fade-in-up" data-delay="1200">
+                    <button onclick="scrollToContent()" class="group bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-yellow-50 transition-all duration-300 btn-animate hover-lift shadow-lg hover:shadow-xl">
+                        <i class="fas fa-play mr-2 group-hover:animate-pulse"></i>
+                        <span>Mulai Belajar Sekarang</span>
+                        <i class="fas fa-arrow-down ml-2 group-hover:animate-bounce"></i>
+                    </button>
+                </div>
             </div>
         </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+        <div class="absolute top-32 right-16 w-6 h-6 bg-yellow-300/30 rounded-full animate-bounce" style="animation-delay: 0.5s;"></div>
+        <div class="absolute bottom-20 left-20 w-3 h-3 bg-white/20 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-32 right-10 w-5 h-5 bg-yellow-300/30 rounded-full animate-bounce" style="animation-delay: 1.5s;"></div>
     </section>
 
     <!-- Filter Tabs -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div id="content-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-wrap gap-4 justify-center mb-8">
             <button class="filter-btn active bg-primary text-white px-6 py-2 rounded-full font-medium" data-filter="all">
                 Semua Materi
@@ -320,17 +414,62 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 LABTANAM. All rights reserved.</p>
+                <p>&copy; 2025 LABTANAM. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Animation Scripts -->
+    <script src="js/animations.js"></script>
+    
+    <!-- Mobile Navigation -->
+    <script src="js/mobile-nav.js"></script>
+
     <script>
-        // Mobile menu toggle
+        // Enhanced mobile menu toggle with animation
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
+            const hamburgerIcon = this.querySelector('.hamburger-icon');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                // Show menu
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('slide-in-down');
+                
+                // Animate hamburger to X
+                const spans = hamburgerIcon.querySelectorAll('span');
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                
+                setTimeout(() => {
+                    mobileMenu.classList.remove('slide-in-down');
+                }, 300);
+            } else {
+                // Hide menu
+                mobileMenu.classList.add('slide-out-up');
+                
+                // Animate X back to hamburger
+                const spans = hamburgerIcon.querySelectorAll('span');
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = '';
+                
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('slide-out-up');
+                }, 300);
+            }
         });
+
+        // Smooth scroll to content
+        function scrollToContent() {
+            document.querySelector('#content-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
 
         // Filter functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
