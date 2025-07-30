@@ -2,7 +2,7 @@
 class LogbookManager {
     constructor() {
         this.logbook = [];
-        this.apiEndpoint = 'https://your-backend-url.railway.app/api/logbook'; // Update with actual backend URL
+        this.apiEndpoint = 'https://labtanam-backend.vercel.app/api/logbook'; // Vercel backend URL
         this.init();
     }
 
