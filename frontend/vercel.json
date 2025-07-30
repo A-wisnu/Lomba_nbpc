@@ -1,18 +1,8 @@
 {
   "version": 2,
   "name": "labtanam-frontend",
-  "builds": [
-    {
-      "src": "**/*.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -60,6 +50,5 @@
       "destination": "/",
       "permanent": true
     }
-  ],
-  "trailingSlash": false
+  ]
 }
