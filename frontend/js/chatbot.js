@@ -2,7 +2,7 @@
 class ChatbotManager {
     constructor() {
         this.messages = this.loadMessages();
-        this.apiEndpoint = 'https://labtanam-backend.vercel.app/api/chat'; // Vercel backend URL
+        this.apiEndpoint = 'https://lomba-nbpc-3o8t.vercel.app/api/chat'; // Vercel backend URL
         this.isLoading = false;
         this.init();
     }
