@@ -14,27 +14,43 @@
             theme: {
                 extend: {
                     colors: {
-                        // Professional & Clean Color Palette
-                        primary: '#1e293b', // Slate 800 - professional, trustworthy
-                        secondary: '#475569', // Slate 600 - sophisticated secondary
-                        accent: '#0f766e', // Teal 700 - subtle accent, professional
-                        success: '#059669', // Emerald 600 - success states
-                        info: '#0369a1', // Sky 700 - informational
-                        warning: '#ca8a04', // Yellow 600 - warnings
-                        danger: '#dc2626', // Red 600 - errors
-                        // Learning levels - muted and professional
-                        'level-basic': '#10b981', // Emerald 500 - approachable
-                        'level-intermediate': '#0891b2', // Cyan 600 - confident
-                        'level-advanced': '#7c3aed', // Violet 600 - sophisticated
-                        // Neutral palette for clean design
-                        'text-primary': '#0f172a', // Slate 900 - main text
+                        // Colorful Professional Education Palette
+                        primary: '#2563eb', // Blue 600 - trust, knowledge, focus
+                        secondary: '#7c3aed', // Violet 600 - creativity, wisdom
+                        accent: '#059669', // Emerald 600 - growth, success
+                        success: '#10b981', // Emerald 500 - achievement
+                        info: '#0ea5e9', // Sky 500 - information, clarity
+                        warning: '#f59e0b', // Amber 500 - attention, energy
+                        danger: '#ef4444', // Red 500 - important, urgent
+                        
+                        // Vibrant Learning Colors
+                        'edu-primary': '#3b82f6', // Blue 500 - learning, focus
+                        'edu-secondary': '#8b5cf6', // Violet 500 - creativity
+                        'edu-accent': '#06b6d4', // Cyan 500 - fresh, modern
+                        'edu-success': '#22c55e', // Green 500 - growth
+                        'edu-warm': '#f97316', // Orange 500 - energy, enthusiasm
+                        'edu-cool': '#6366f1', // Indigo 500 - depth, knowledge
+                        
+                        // Learning Levels - Colorful yet Professional
+                        'level-basic': '#22c55e', // Green 500 - beginner friendly
+                        'level-intermediate': '#3b82f6', // Blue 500 - progressive
+                        'level-advanced': '#8b5cf6', // Violet 500 - advanced
+                        
+                        // Enhanced Text Colors
+                        'text-primary': '#1e293b', // Slate 800 - main text
                         'text-secondary': '#475569', // Slate 600 - secondary text
                         'text-muted': '#64748b', // Slate 500 - muted text
                         'border-light': '#e2e8f0', // Slate 200 - light borders
                         'bg-subtle': '#f8fafc', // Slate 50 - subtle backgrounds
+                        'bg-gradient-start': '#dbeafe', // Blue 100 - gradient start
+                        'bg-gradient-end': '#fef3c7', // Amber 100 - gradient end
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.3s ease-out'
+                        'fade-in': 'fadeIn 0.3s ease-out',
+                        'bounce-gentle': 'bounceGentle 1s ease-in-out infinite',
+                        'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
                     }
                 }
             }
@@ -79,73 +95,127 @@
         </div>
     </nav>
 
-    <!-- Clean Professional Header -->
-    <section class="bg-white border-b border-border-light py-16 sm:py-20 lg:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Colorful Professional Header -->
+    <section class="relative bg-gradient-to-br from-edu-primary via-primary to-edu-secondary text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3Ccircle cx="10" cy="10" r="1"/%3E%3Ccircle cx="50" cy="50" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
+            <i class="fas fa-graduation-cap text-2xl text-white/70"></i>
+        </div>
+        <div class="absolute top-32 right-16 w-16 h-16 bg-edu-accent/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-book text-xl text-white/70"></i>
+        </div>
+        <div class="absolute bottom-20 left-20 w-12 h-12 bg-edu-success/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-leaf text-sm text-white/70"></i>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto text-center">
-                <!-- Clean Heading -->
+                <!-- Colorful Heading -->
                 <div class="mb-8">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight tracking-tight">
-                        Pusat Edukasi<br>
-                        <span class="text-accent">Hidroponik</span>
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
+                        <i class="fas fa-seedling text-3xl text-edu-success"></i>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                        <span class="block">Pusat Edukasi</span>
+                        <span class="block bg-gradient-to-r from-edu-accent to-edu-success bg-clip-text text-transparent">Hidroponik</span>
                     </h1>
-                    <p class="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                    <p class="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                         Pelajari teknik budidaya hidroponik modern dengan panduan komprehensif dari para ahli
                     </p>
                 </div>
                 
-                <!-- Clean Stats Section -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-4xl mx-auto">
-                    <div class="text-center">
-                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">500+</div>
-                        <div class="text-text-secondary font-medium">Video Tutorial</div>
+                <!-- Colorful Stats Cards -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-5xl mx-auto mb-8">
+                    <div class="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div class="w-12 h-12 bg-edu-warm/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-play text-edu-warm text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">500+</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Video Tutorial</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">50+</div>
-                        <div class="text-text-secondary font-medium">Panduan PDF</div>
+                    <div class="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div class="w-12 h-12 bg-edu-accent/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-file-pdf text-edu-accent text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">50+</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Panduan PDF</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">10K+</div>
-                        <div class="text-text-secondary font-medium">Siswa Aktif</div>
+                    <div class="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div class="w-12 h-12 bg-edu-success/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-users text-edu-success text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">10K+</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Siswa Aktif</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">95%</div>
-                        <div class="text-text-secondary font-medium">Tingkat Sukses</div>
+                    <div class="bg-white/15 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300">
+                        <div class="w-12 h-12 bg-warning/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-trophy text-warning text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1">95%</div>
+                        <div class="text-sm lg:text-base text-white/80 font-medium">Tingkat Sukses</div>
                     </div>
                 </div>
                 
-                <!-- Clean CTA -->
-                <div class="mt-12">
-                    <button onclick="scrollToContent()" class="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
-                        Mulai Belajar
+                <!-- Colorful CTA -->
+                <div class="mt-8">
+                    <button onclick="scrollToContent()" class="bg-gradient-to-r from-edu-success to-accent text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-rocket mr-2"></i>Mulai Belajar Sekarang
                     </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Clean Filter Section -->
-    <div id="content-section" class="bg-bg-subtle py-12">
+    <!-- Colorful Filter Section -->
+    <div id="content-section" class="bg-gradient-to-r from-bg-gradient-start to-bg-gradient-end py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
-                <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-4">Materi Pembelajaran</h2>
-                <p class="text-text-secondary text-lg max-w-2xl mx-auto">Pilih kategori materi sesuai dengan tingkat keahlian Anda</p>
+                <h2 class="text-2xl sm:text-3xl font-bold text-text-primary mb-4">
+                    <i class="fas fa-book-open text-edu-primary mr-3"></i>
+                    Materi Pembelajaran
+                </h2>
+                <p class="text-text-secondary text-lg max-w-2xl mx-auto">Pilih jalur pembelajaran sesuai dengan tingkat keahlian Anda</p>
             </div>
             
-            <!-- Professional Filter Tabs -->
-            <div class="flex flex-wrap gap-2 justify-center mb-12">
-                <button class="filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-primary text-white active" data-filter="all">
-                    Semua Materi
+            <!-- Colorful Filter Tabs -->
+            <div class="flex flex-wrap gap-4 justify-center mb-8">
+                <button class="filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-edu-primary to-primary text-white shadow-lg hover:shadow-xl hover:scale-105 active" data-filter="all">
+                    <i class="fas fa-list mr-2 group-hover:animate-pulse"></i>
+                    <span>Semua Materi</span>
+                    <div class="absolute -top-1 -right-1 w-3 h-3 bg-edu-warm rounded-full animate-pulse"></div>
                 </button>
-                <button class="filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-basic hover:text-level-basic" data-filter="beginner">
-                    Pemula
+                <button class="filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-basic border-2 border-level-basic/30 hover:bg-level-basic hover:text-white hover:border-level-basic hover:shadow-lg hover:scale-105" data-filter="beginner">
+                    <i class="fas fa-seedling mr-2 group-hover:animate-bounce"></i>
+                    <span>Pemula</span>
+                    <span class="ml-2 px-2 py-1 text-xs bg-level-basic/20 text-level-basic rounded-full group-hover:bg-white/20 group-hover:text-white">Mudah</span>
                 </button>
-                <button class="filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-intermediate hover:text-level-intermediate" data-filter="intermediate">
-                    Menengah
+                <button class="filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-intermediate border-2 border-level-intermediate/30 hover:bg-level-intermediate hover:text-white hover:border-level-intermediate hover:shadow-lg hover:scale-105" data-filter="intermediate">
+                    <i class="fas fa-leaf mr-2 group-hover:animate-bounce"></i>
+                    <span>Menengah</span>
+                    <span class="ml-2 px-2 py-1 text-xs bg-level-intermediate/20 text-level-intermediate rounded-full group-hover:bg-white/20 group-hover:text-white">Sedang</span>
                 </button>
-                <button class="filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-advanced hover:text-level-advanced" data-filter="advanced">
-                    Lanjutan
+                <button class="filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-advanced border-2 border-level-advanced/30 hover:bg-level-advanced hover:text-white hover:border-level-advanced hover:shadow-lg hover:scale-105" data-filter="advanced">
+                    <i class="fas fa-tree mr-2 group-hover:animate-bounce"></i>
+                    <span>Lanjutan</span>
+                    <span class="ml-2 px-2 py-1 text-xs bg-level-advanced/20 text-level-advanced rounded-full group-hover:bg-white/20 group-hover:text-white">Sulit</span>
                 </button>
+            </div>
+            
+            <!-- Learning Progress Indicator -->
+            <div class="max-w-2xl mx-auto">
+                <div class="flex items-center justify-between text-sm text-text-muted mb-2">
+                    <span class="flex items-center">
+                        <i class="fas fa-chart-line text-edu-primary mr-2"></i>
+                        Progres Pembelajaran
+                    </span>
+                    <span id="progress-text" class="font-semibold text-edu-primary">0% Selesai</span>
+                </div>
+                <div class="w-full bg-white/50 rounded-full h-3 shadow-inner">
+                    <div id="progress-bar" class="bg-gradient-to-r from-level-basic via-level-intermediate to-level-advanced h-3 rounded-full transition-all duration-500 shadow-sm" style="width: 0%"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -153,44 +223,78 @@
     <!-- Content Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Video Tutorial 1 - Clean Professional -->
-            <div class="content-item bg-white rounded-lg shadow-sm border border-border-light hover:shadow-md transition-all duration-200 group" data-category="beginner">
+            <!-- Video Tutorial 1 - Colorful Professional -->
+            <div class="content-item bg-white rounded-2xl shadow-lg border border-level-basic/20 hover:shadow-2xl hover:scale-105 transition-all duration-300 group overflow-hidden" data-category="beginner">
                 <div class="relative">
-                    <div class="aspect-video bg-gray-100 flex items-center justify-center cursor-pointer" onclick="playVideo('beginner-intro')">
-                        <div class="text-center">
-                            <i class="fas fa-play-circle text-4xl text-primary mb-2 group-hover:text-accent transition-colors duration-200"></i>
-                            <p class="text-sm text-text-secondary font-medium">Video Tutorial</p>
+                    <!-- Colorful Video Thumbnail -->
+                    <div class="aspect-video bg-gradient-to-br from-level-basic/20 via-edu-success/10 to-level-basic/30 flex items-center justify-center cursor-pointer relative overflow-hidden" onclick="playVideo('beginner-intro')">
+                        <div class="text-center z-10">
+                            <div class="relative">
+                                <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                    <i class="fas fa-play text-2xl text-level-basic group-hover:text-edu-success transition-colors duration-300"></i>
+                                </div>
+                                <div class="absolute inset-0 bg-level-basic/20 rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>
+                            </div>
+                            <p class="text-sm font-semibold text-level-basic bg-white/90 px-3 py-1 rounded-full">Video Tutorial Interaktif</p>
                         </div>
+                        <!-- Animated Background Pattern -->
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2322c55e" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3Ccircle cx="10" cy="10" r="1"/%3E%3Ccircle cx="50" cy="50" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
                     </div>
-                    <div class="absolute top-3 right-3 bg-level-basic text-white px-3 py-1 rounded-md text-xs font-medium">
-                        Pemula
+                    
+                    <!-- Colorful Badges -->
+                    <div class="absolute top-3 right-3 bg-gradient-to-r from-level-basic to-edu-success text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                        <i class="fas fa-seedling mr-1"></i>Pemula
                     </div>
-                    <div class="absolute top-3 left-3 bg-white/90 text-text-primary px-3 py-1 rounded-md text-xs font-medium">
-                        ★ 4.9
+                    <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-warning px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                        <i class="fas fa-star mr-1"></i>4.9
+                    </div>
+                    <div class="absolute bottom-3 left-3 bg-gradient-to-r from-edu-warm to-warning text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse">
+                        <i class="fas fa-gift mr-1"></i>GRATIS
                     </div>
                 </div>
+                
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-text-primary mb-3 leading-tight">
-                        Pengenalan Hidroponik untuk Pemula
-                    </h3>
-                    <p class="text-text-secondary mb-4 leading-relaxed">
-                        Pelajari dasar-dasar sistem hidroponik, jenis tanaman yang cocok, dan persiapan awal untuk memulai kebun hidroponik Anda.
-                    </p>
-                    <div class="flex items-center gap-4 text-sm text-text-muted mb-4">
-                        <span class="flex items-center">
-                            <i class="fas fa-clock mr-1"></i>15 menit
-                        </span>
-                        <span class="flex items-center">
-                            <i class="fas fa-users mr-1"></i>1.2k siswa
-                        </span>
-                        <span class="text-success font-medium">Gratis</span>
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-xl font-bold text-text-primary group-hover:text-level-basic transition-colors leading-tight">
+                            Pengenalan Hidroponik untuk Pemula
+                        </h3>
+                        <div class="flex items-center ml-2">
+                            <div class="w-2 h-2 bg-level-basic rounded-full animate-pulse"></div>
+                        </div>
                     </div>
+                    
+                    <p class="text-text-secondary mb-4 leading-relaxed">
+                        Mulai perjalanan hidroponik Anda dengan <span class="text-level-basic font-semibold">panduan step-by-step</span> yang mudah dipahami. 
+                        Pelajari dasar-dasar sistem dan persiapan awal untuk <span class="text-edu-success font-semibold">kesuksesan pertama Anda</span>.
+                    </p>
+                    
+                    <!-- Enhanced Info Cards -->
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div class="bg-edu-primary/10 rounded-lg p-2 text-center">
+                            <i class="fas fa-clock text-edu-primary text-sm mb-1"></i>
+                            <div class="text-xs font-semibold text-edu-primary">15 menit</div>
+                        </div>
+                        <div class="bg-edu-accent/10 rounded-lg p-2 text-center">
+                            <i class="fas fa-users text-edu-accent text-sm mb-1"></i>
+                            <div class="text-xs font-semibold text-edu-accent">1.2k siswa</div>
+                        </div>
+                        <div class="bg-edu-success/10 rounded-lg p-2 text-center">
+                            <i class="fas fa-certificate text-edu-success text-sm mb-1"></i>
+                            <div class="text-xs font-semibold text-edu-success">Sertifikat</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Colorful Action Buttons -->
                     <div class="flex gap-3">
-                        <button onclick="playVideo('beginner-intro')" class="flex-1 bg-primary text-white px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200">
-                            Mulai Belajar
+                        <button onclick="playVideo('beginner-intro')" class="flex-1 bg-gradient-to-r from-level-basic to-edu-success text-white px-4 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group/btn">
+                            <i class="fas fa-play mr-2 group-hover/btn:animate-bounce"></i>
+                            <span>Mulai Belajar</span>
                         </button>
-                        <button onclick="bookmarkContent('beginner-intro')" class="p-2 text-text-muted hover:text-accent transition-colors duration-200">
+                        <button onclick="bookmarkContent('beginner-intro')" class="bg-gradient-to-r from-edu-warm/20 to-warning/20 text-edu-warm hover:from-edu-warm hover:to-warning hover:text-white px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
                             <i class="fas fa-bookmark"></i>
+                        </button>
+                        <button onclick="shareContent('beginner-intro')" class="bg-gradient-to-r from-edu-accent/20 to-info/20 text-edu-accent hover:from-edu-accent hover:to-info hover:text-white px-4 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+                            <i class="fas fa-share"></i>
                         </button>
                     </div>
                 </div>
@@ -457,12 +561,91 @@
     <!-- Bottom Navigation -->
     <script src="js/bottom-nav.js"></script>
     
-    <!-- Clean Professional Styles -->
+    <!-- Colorful Professional Styles -->
     <style>
-        /* Minimal animations */
+        /* Enhanced animations */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6); }
+        }
+        
+        /* Enhanced filter button animations */
+        .filter-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Content card hover effects */
+        .content-item:hover .aspect-video {
+            transform: scale(1.02);
+        }
+        
+        /* Progress bar animation */
+        #progress-bar {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+                -45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 50px 50px;
+            animation: move 2s linear infinite;
+        }
+        
+        @keyframes move {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
         }
         
         /* Bottom Navigation Styles */
@@ -473,18 +656,18 @@
         }
         
         .bottom-nav-item.active {
-            color: #1e293b;
+            color: #2563eb;
         }
         
         .bottom-nav-item.active .bottom-nav-icon-container {
-            background: #1e293b;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
         
         .bottom-nav-item.active .bottom-nav-label {
-            color: #1e293b;
+            color: #2563eb;
             font-weight: 600;
         }
         
@@ -505,7 +688,7 @@
         }
         
         .bottom-nav-item:not(.active):hover {
-            color: #1e293b;
+            color: #2563eb;
         }
         
         /* Active indicator */
@@ -517,8 +700,9 @@
             transform: translateX(-50%);
             width: 4px;
             height: 4px;
-            background: #1e293b;
+            background: #2563eb;
             border-radius: 50%;
+            box-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
         }
         
         /* Body padding for bottom nav */
@@ -575,30 +759,30 @@
                 // Update active button with smooth transition
                 document.querySelectorAll('.filter-btn').forEach(b => {
                     b.classList.remove('active');
-                    // Reset to default styles based on data-filter
+                    // Reset to colorful default styles based on data-filter
                     const filter = b.dataset.filter;
                     if (filter === 'all') {
-                        b.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:bg-primary hover:text-white';
+                        b.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-edu-primary border-2 border-edu-primary/30 hover:bg-gradient-to-r hover:from-edu-primary hover:to-primary hover:text-white hover:shadow-lg hover:scale-105';
                     } else if (filter === 'beginner') {
-                        b.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-basic hover:text-level-basic';
+                        b.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-basic border-2 border-level-basic/30 hover:bg-level-basic hover:text-white hover:border-level-basic hover:shadow-lg hover:scale-105';
                     } else if (filter === 'intermediate') {
-                        b.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-intermediate hover:text-level-intermediate';
+                        b.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-intermediate border-2 border-level-intermediate/30 hover:bg-level-intermediate hover:text-white hover:border-level-intermediate hover:shadow-lg hover:scale-105';
                     } else if (filter === 'advanced') {
-                        b.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white text-text-secondary border border-border-light hover:border-level-advanced hover:text-level-advanced';
+                        b.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-white text-level-advanced border-2 border-level-advanced/30 hover:bg-level-advanced hover:text-white hover:border-level-advanced hover:shadow-lg hover:scale-105';
                     }
                 });
                 
-                // Set active button
+                // Set colorful active button
                 btn.classList.add('active');
                 const filter = btn.dataset.filter;
                 if (filter === 'all') {
-                    btn.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-primary text-white active';
+                    btn.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-edu-primary to-primary text-white shadow-lg hover:shadow-xl hover:scale-105 active';
                 } else if (filter === 'beginner') {
-                    btn.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-level-basic text-white active';
+                    btn.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-level-basic to-edu-success text-white shadow-lg hover:shadow-xl hover:scale-105 active';
                 } else if (filter === 'intermediate') {
-                    btn.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-level-intermediate text-white active';
+                    btn.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-level-intermediate to-edu-accent text-white shadow-lg hover:shadow-xl hover:scale-105 active';
                 } else if (filter === 'advanced') {
-                    btn.className = 'filter-btn px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-level-advanced text-white active';
+                    btn.className = 'filter-btn group px-6 py-4 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-level-advanced to-edu-secondary text-white shadow-lg hover:shadow-xl hover:scale-105 active';
                 }
                 
                 this.currentFilter = filter;
