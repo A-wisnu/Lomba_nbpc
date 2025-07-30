@@ -14,15 +14,23 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#16a34a',
-                        secondary: '#22c55e',
-                        accent: '#84cc16',
+                        // Professional & Clean Color Palette (Same as homepage)
+                        primary: '#1e293b', // Slate 800 - professional, trustworthy
+                        secondary: '#475569', // Slate 600 - sophisticated secondary
+                        accent: '#0f766e', // Teal 700 - subtle accent, professional
+                        success: '#059669', // Emerald 600 - success states
+                        info: '#0369a1', // Sky 700 - informational
+                        warning: '#ca8a04', // Yellow 600 - warnings
+                        danger: '#dc2626', // Red 600 - errors
+                        // Neutral palette for clean design
+                        'text-primary': '#0f172a', // Slate 900 - main text
+                        'text-secondary': '#475569', // Slate 600 - secondary text
+                        'text-muted': '#64748b', // Slate 500 - muted text
+                        'border-light': '#e2e8f0', // Slate 200 - light borders
+                        'bg-subtle': '#f8fafc', // Slate 50 - subtle backgrounds
                     },
                     animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease-out',
-                        'fade-in-down': 'fadeInDown 0.6s ease-out',
-                        'scale-in': 'scaleIn 0.5s ease-out',
-                        'slide-in-up': 'slideInUp 0.4s ease-out'
+                        'fade-in': 'fadeIn 0.3s ease-out'
                     }
                 }
             }
@@ -30,7 +38,7 @@
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 min-h-screen page-komunitas">
+<body class="bg-white min-h-screen page-komunitas">
         <!-- Navigation -->
     <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 fade-in-down">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,16 +75,50 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <section class="bg-gradient-to-r from-orange-600 to-red-600 text-white py-16">
+    <!-- Clean Professional Header -->
+    <section class="bg-white border-b border-border-light py-16 sm:py-20 lg:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                    <i class="fas fa-users mr-3"></i>Komunitas LABTANAM
-                </h1>
-                <p class="text-xl opacity-90 max-w-3xl mx-auto">
-                    Bergabunglah dengan ribuan petani hidroponik Indonesia. Berbagi pengalaman, tips, dan dapatkan peralatan terbaik
-                </p>
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Clean Heading -->
+                <div class="mb-8">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-6 leading-tight tracking-tight">
+                        Komunitas<br>
+                        <span class="text-accent">LABTANAM</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                        Bergabunglah dengan ribuan petani hidroponik Indonesia untuk berbagi pengalaman dan pengetahuan
+                    </p>
+                </div>
+                
+                <!-- Community Stats -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-4xl mx-auto mb-8">
+                    <div class="text-center">
+                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">15K+</div>
+                        <div class="text-text-secondary font-medium">Anggota Aktif</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">2.5K</div>
+                        <div class="text-text-secondary font-medium">Diskusi</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">850</div>
+                        <div class="text-text-secondary font-medium">Tips Dibagikan</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl lg:text-4xl font-bold text-text-primary mb-2">98%</div>
+                        <div class="text-text-secondary font-medium">Kepuasan</div>
+                    </div>
+                </div>
+                
+                <!-- Clean CTA -->
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button onclick="joinCommunity()" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200">
+                        <i class="fas fa-user-plus mr-2"></i>Bergabung Sekarang
+                    </button>
+                    <button onclick="browsePosts()" class="bg-white text-primary border border-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-200">
+                        <i class="fas fa-eye mr-2"></i>Lihat Diskusi
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -405,6 +447,160 @@
         </div>
     </footer>
 
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg md:hidden z-50" id="bottom-nav">
+        <div class="flex justify-around items-center py-2">
+            <a href="index.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300" data-page="index">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-home text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Beranda</span>
+            </a>
+            <a href="edukasi.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300" data-page="edukasi">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Edukasi</span>
+            </a>
+            <a href="monitoring.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300" data-page="monitoring">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Monitor</span>
+            </a>
+            <a href="chatbot.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300" data-page="chatbot">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">AI Chat</span>
+            </a>
+            <a href="komunitas.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300 active" data-page="komunitas">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Komunitas</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Bottom Navigation -->
+    <script src="js/bottom-nav.js"></script>
+    
+    <!-- Clean Professional Styles -->
+    <style>
+        /* Minimal animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Bottom Navigation Styles */
+        .bottom-nav-item {
+            min-width: 60px;
+            position: relative;
+            color: #6b7280;
+        }
+        
+        .bottom-nav-item.active {
+            color: #1e293b;
+        }
+        
+        .bottom-nav-item.active .bottom-nav-icon-container {
+            background: #1e293b;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 41, 59, 0.2);
+        }
+        
+        .bottom-nav-item.active .bottom-nav-label {
+            color: #1e293b;
+            font-weight: 600;
+        }
+        
+        .bottom-nav-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+        }
+        
+        .bottom-nav-item:not(.active):hover .bottom-nav-icon-container {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+        
+        .bottom-nav-item:not(.active):hover {
+            color: #1e293b;
+        }
+        
+        /* Active indicator */
+        .bottom-nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #1e293b;
+            border-radius: 50%;
+        }
+        
+        /* Body padding for bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+    </style>
+
+    <script>
+        // Community Page Functions
+        function joinCommunity() {
+            showNotification('Selamat datang di komunitas LABTANAM!', 'success');
+        }
+        
+        function browsePosts() {
+            showNotification('Menampilkan diskusi terbaru...', 'info');
+        }
+        
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white transform translate-x-full transition-transform duration-300`;
+            
+            if (type === 'success') {
+                notification.classList.add('bg-success');
+            } else if (type === 'info') {
+                notification.classList.add('bg-info');
+            } else {
+                notification.classList.add('bg-gray-600');
+            }
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
     <script>
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
