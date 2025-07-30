@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/mobile-nav.css">
+    <link rel="stylesheet" href="assets/css/button-animations.css">
     <script>
         tailwind.config = {
             theme: {
@@ -174,27 +175,55 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Video Tutorial 1 -->
-            <div class="content-item bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow" data-category="beginner">
-                <div class="relative">
-                    <div class="aspect-video bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <i class="fas fa-play-circle text-6xl mb-2 opacity-80"></i>
-                            <p class="text-sm">Video Tutorial</p>
+            <div class="content-item bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 card-hover" data-category="beginner">
+                <div class="relative group">
+                    <div class="aspect-video bg-gradient-to-br from-green-400 via-emerald-500 to-blue-500 flex items-center justify-center relative overflow-hidden">
+                        <div class="text-center text-white z-10">
+                            <i class="fas fa-play-circle text-6xl mb-2 opacity-80 group-hover:scale-110 transition-transform duration-300"></i>
+                            <p class="text-sm font-medium">Video Tutorial</p>
                         </div>
+                        <!-- Animated background pattern -->
+                        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
                     </div>
-                    <div class="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-medium">
-                        Pemula
+                    <div class="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                        <i class="fas fa-seedling mr-1"></i>Pemula
+                    </div>
+                    <div class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs">
+                        <i class="fas fa-star mr-1"></i>4.9
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Pengenalan Hidroponik untuk Pemula</h3>
-                    <p class="text-gray-600 mb-4">Dasar-dasar sistem hidroponik, jenis-jenis tanaman yang cocok, dan persiapan awal.</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-500">
-                            <i class="fas fa-clock mr-1"></i>15 menit
-                        </span>
-                        <button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
-                            Tonton
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
+                        Pengenalan Hidroponik untuk Pemula
+                    </h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Dasar-dasar sistem hidroponik, jenis-jenis tanaman yang cocok, dan persiapan awal untuk memulai kebun hidroponik Anda.
+                    </p>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-4 text-sm text-gray-500">
+                            <span class="flex items-center">
+                                <i class="fas fa-clock mr-1 text-green-500"></i>15 menit
+                            </span>
+                            <span class="flex items-center">
+                                <i class="fas fa-users mr-1 text-blue-500"></i>1.2k
+                            </span>
+                        </div>
+                        <span class="text-green-600 font-semibold">Gratis</span>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-shimmer btn-ripple flex-1" 
+                                data-popup="video-tutorial-1" 
+                                data-popup-type="bounce"
+                                data-popup-title="Pengenalan Hidroponik untuk Pemula"
+                                data-popup-content="<div class='aspect-video bg-gray-100 rounded-lg mb-4 flex items-center justify-center'><i class='fas fa-play-circle text-4xl text-green-500'></i></div><p>Video tutorial lengkap tentang dasar-dasar hidroponik untuk pemula. Anda akan mempelajari:</p><ul class='list-disc list-inside mt-2 space-y-1'><li>Konsep dasar hidroponik</li><li>Jenis-jenis sistem hidroponik</li><li>Tanaman yang cocok untuk pemula</li><li>Persiapan alat dan bahan</li></ul>">
+                            <i class="fas fa-play mr-2"></i>Tonton
+                        </button>
+                        <button class="btn btn-secondary btn-icon-only btn-ripple" 
+                                data-popup="dynamic" 
+                                data-popup-type="slide-top"
+                                data-popup-title="Bookmark Tutorial"
+                                data-popup-content="<p>Tutorial telah ditambahkan ke daftar bookmark Anda!</p>">
+                            <i class="fas fa-bookmark"></i>
                         </button>
                     </div>
                 </div>
@@ -419,11 +448,23 @@
         </div>
     </footer>
 
+    <!-- Floating Action Button -->
+    <button class="btn btn-primary btn-float btn-pulse btn-ripple" 
+            data-popup="dynamic" 
+            data-popup-type="bounce"
+            data-popup-title="🎓 Bantuan Belajar"
+            data-popup-content="<div class='text-center'><i class='fas fa-graduation-cap text-4xl text-green-500 mb-4'></i><p class='mb-4'>Butuh bantuan dalam belajar hidroponik?</p><div class='btn-group-vertical'><button class='btn btn-primary btn-full-width' onclick='showNotification(\"Menghubungkan ke tutor...\", \"info\")'>💬 Chat dengan Tutor</button><button class='btn btn-secondary btn-full-width' onclick='showNotification(\"Panduan telah dikirim ke email Anda!\", \"success\")'>📧 Download Panduan PDF</button><button class='btn btn-accent btn-full-width' onclick='showNotification(\"Bergabung dengan komunitas belajar!\", \"info\")'>👥 Gabung Komunitas</button></div></div>">
+        <i class="fas fa-question-circle"></i>
+    </button>
+
     <!-- Animation Scripts -->
     <script src="js/animations.js"></script>
     
     <!-- Mobile Navigation -->
     <script src="js/mobile-nav.js"></script>
+    
+    <!-- Pop-up Controller -->
+    <script src="js/popup-controller.js"></script>
 
     <script>
         // Enhanced mobile menu toggle with animation

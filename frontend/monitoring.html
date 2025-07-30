@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/mobile-nav.css">
+    <link rel="stylesheet" href="assets/css/button-animations.css">
     <script>
         tailwind.config = {
             theme: {
@@ -92,36 +93,116 @@
     </nav>
 
     <!-- Header -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Monitoring Tanaman</h1>
-                <p class="text-xl opacity-90 max-w-3xl mx-auto">
-                    Pantau perkembangan tanaman hidroponik Anda dengan logbook digital yang mudah dan praktis
-                </p>
+                <!-- Main Heading -->
+                <div class="mb-6" data-animation="fade-in-up">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                        <span class="block fade-in-up stagger-1">📊 Monitoring</span>
+                        <span class="block text-cyan-300 fade-in-up stagger-2">Tanaman Hidroponik</span>
+                    </h1>
+                </div>
+                
+                <!-- Subtitle -->
+                <div class="mb-8" data-animation="fade-in-up" data-delay="600">
+                    <p class="text-lg sm:text-xl lg:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed">
+                        Pantau perkembangan tanaman hidroponik Anda dengan <span class="text-cyan-300 font-semibold">dashboard digital</span> 
+                        yang canggih dan mudah digunakan
+                    </p>
+                </div>
+                
+                <!-- Quick Action Buttons -->
+                <div class="flex flex-wrap gap-4 justify-center mb-8" data-animation="fade-in-up" data-delay="900">
+                    <button class="btn btn-accent btn-lg btn-shimmer btn-ripple" 
+                            data-popup="dynamic" 
+                            data-popup-type="bounce"
+                            data-popup-title="📱 Tambah Tanaman Baru"
+                            data-popup-content="<div class='text-center'><i class='fas fa-seedling text-4xl text-green-500 mb-4'></i><p class='mb-4'>Mulai monitoring tanaman baru Anda!</p><form class='space-y-4'><input type='text' placeholder='Nama tanaman' class='w-full px-4 py-3 border rounded-lg'><select class='w-full px-4 py-3 border rounded-lg'><option>Pilih jenis sistem</option><option>NFT</option><option>DFT</option><option>Wick System</option></select><button type='submit' class='btn btn-primary btn-full-width'>Tambah Tanaman</button></form></div>">
+                        <i class="fas fa-plus mr-2"></i>Tambah Tanaman
+                    </button>
+                    <button class="btn btn-info btn-lg btn-shimmer btn-ripple" 
+                            data-popup="dynamic" 
+                            data-popup-type="slide-top"
+                            data-popup-title="📈 Analisis Pertumbuhan"
+                            data-popup-content="<div class='text-center'><i class='fas fa-chart-line text-4xl text-blue-500 mb-4'></i><p class='mb-4'>Lihat analisis detail pertumbuhan tanaman Anda</p><div class='grid grid-cols-2 gap-4 mb-4'><div class='bg-green-50 p-4 rounded-lg'><div class='text-2xl font-bold text-green-600'>95%</div><div class='text-sm text-gray-600'>Tingkat Keberhasilan</div></div><div class='bg-blue-50 p-4 rounded-lg'><div class='text-2xl font-bold text-blue-600'>28</div><div class='text-sm text-gray-600'>Hari Rata-rata</div></div></div><button class='btn btn-primary btn-full-width'>Lihat Detail</button></div>">
+                        <i class="fas fa-chart-line mr-2"></i>Lihat Analisis
+                    </button>
+                    <button class="btn btn-success btn-lg btn-shimmer btn-ripple" 
+                            data-popup="dynamic" 
+                            data-popup-type="bounce"
+                            data-popup-title="🌱 Tips Perawatan Hari Ini"
+                            data-popup-content="<div class='text-center'><i class='fas fa-lightbulb text-4xl text-yellow-500 mb-4'></i><h4 class='font-bold mb-2'>Tips Perawatan Hari Ini</h4><ul class='text-left space-y-2 mb-4'><li>✅ Periksa pH air (6.0-6.5)</li><li>✅ Ganti nutrisi setiap 2 minggu</li><li>✅ Bersihkan akar dari alga</li><li>✅ Pantau suhu air (18-22°C)</li></ul><button class='btn btn-primary btn-full-width'>Set Pengingat</button></div>">
+                        <i class="fas fa-lightbulb mr-2"></i>Tips Hari Ini
+                    </button>
+                </div>
             </div>
         </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-white/20 rounded-full animate-bounce" style="animation-delay: 0s;"></div>
+        <div class="absolute top-32 right-16 w-6 h-6 bg-cyan-300/30 rounded-full animate-bounce" style="animation-delay: 0.5s;"></div>
+        <div class="absolute bottom-20 left-20 w-3 h-3 bg-white/20 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-32 right-10 w-5 h-5 bg-cyan-300/30 rounded-full animate-bounce" style="animation-delay: 1.5s;"></div>
     </section>
 
     <!-- Quick Stats -->
-    <section class="py-8 bg-white shadow-sm">
+    <section class="py-12 bg-gradient-to-r from-gray-50 to-blue-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary" id="total-plants">0</div>
-                    <div class="text-gray-600 text-sm">Total Tanaman</div>
+                <!-- Total Tanaman -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 card-hover cursor-pointer"
+                     data-popup="dynamic" 
+                     data-popup-type="bounce"
+                     data-popup-title="🌱 Total Tanaman"
+                     data-popup-content="<div class='text-center'><i class='fas fa-seedling text-4xl text-green-500 mb-4'></i><p class='mb-4'>Anda memiliki <strong>12 tanaman</strong> yang sedang dimonitor</p><div class='space-y-2 text-left'><div class='flex justify-between'><span>Selada:</span><span class='font-semibold'>5 tanaman</span></div><div class='flex justify-between'><span>Bayam:</span><span class='font-semibold'>4 tanaman</span></div><div class='flex justify-between'><span>Kangkung:</span><span class='font-semibold'>3 tanaman</span></div></div></div>">
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">🌱</div>
+                        <div class="text-3xl font-bold text-primary group-hover:text-green-600 transition-colors" id="total-plants">12</div>
+                        <div class="text-gray-600 text-sm font-medium">Total Tanaman</div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-blue-600" id="total-logs">0</div>
-                    <div class="text-gray-600 text-sm">Log Hari Ini</div>
+
+                <!-- Log Hari Ini -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 card-hover cursor-pointer"
+                     data-popup="dynamic" 
+                     data-popup-type="bounce"
+                     data-popup-title="📝 Log Hari Ini"
+                     data-popup-content="<div class='text-center'><i class='fas fa-clipboard-list text-4xl text-blue-500 mb-4'></i><p class='mb-4'>Anda telah membuat <strong>8 log</strong> hari ini</p><div class='space-y-2 text-left'><div class='bg-blue-50 p-3 rounded-lg'><div class='font-semibold'>Penyiraman Selada</div><div class='text-sm text-gray-600'>2 jam yang lalu</div></div><div class='bg-green-50 p-3 rounded-lg'><div class='font-semibold'>Ganti Nutrisi Bayam</div><div class='text-sm text-gray-600'>4 jam yang lalu</div></div></div></div>">
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">📝</div>
+                        <div class="text-3xl font-bold text-blue-600 group-hover:text-blue-700 transition-colors" id="total-logs">8</div>
+                        <div class="text-gray-600 text-sm font-medium">Log Hari Ini</div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-orange-600" id="active-plants">0</div>
-                    <div class="text-gray-600 text-sm">Sedang Tumbuh</div>
+
+                <!-- Sedang Tumbuh -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 card-hover cursor-pointer"
+                     data-popup="dynamic" 
+                     data-popup-type="bounce"
+                     data-popup-title="🌿 Sedang Tumbuh"
+                     data-popup-content="<div class='text-center'><i class='fas fa-leaf text-4xl text-orange-500 mb-4'></i><p class='mb-4'><strong>9 tanaman</strong> sedang dalam fase pertumbuhan aktif</p><div class='space-y-2 text-left'><div class='bg-orange-50 p-3 rounded-lg'><div class='font-semibold'>Selada Hijau #1</div><div class='text-sm text-gray-600'>Hari ke-15 (Fase vegetatif)</div></div><div class='bg-yellow-50 p-3 rounded-lg'><div class='font-semibold'>Bayam Merah #2</div><div class='text-sm text-gray-600'>Hari ke-8 (Bibit)</div></div></div></div>">
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">🌿</div>
+                        <div class="text-3xl font-bold text-orange-600 group-hover:text-orange-700 transition-colors" id="active-plants">9</div>
+                        <div class="text-gray-600 text-sm font-medium">Sedang Tumbuh</div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-green-600" id="harvest-ready">0</div>
-                    <div class="text-gray-600 text-sm">Siap Panen</div>
+
+                <!-- Siap Panen -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 card-hover cursor-pointer"
+                     data-popup="dynamic" 
+                     data-popup-type="bounce"
+                     data-popup-title="🥬 Siap Panen"
+                     data-popup-content="<div class='text-center'><i class='fas fa-award text-4xl text-green-500 mb-4'></i><p class='mb-4'><strong>3 tanaman</strong> sudah siap untuk dipanen!</p><div class='space-y-2 text-left'><div class='bg-green-50 p-3 rounded-lg border-l-4 border-green-500'><div class='font-semibold text-green-700'>Selada Keriting #3</div><div class='text-sm text-gray-600'>Siap panen (35 hari)</div></div><div class='bg-green-50 p-3 rounded-lg border-l-4 border-green-500'><div class='font-semibold text-green-700'>Kangkung #1</div><div class='text-sm text-gray-600'>Siap panen (28 hari)</div></div></div><button class='btn btn-success btn-full-width mt-4'>Catat Panen</button></div>">
+                    <div class="text-center">
+                        <div class="text-4xl mb-2">🥬</div>
+                        <div class="text-3xl font-bold text-green-600 group-hover:text-green-700 transition-colors" id="harvest-ready">3</div>
+                        <div class="text-gray-600 text-sm font-medium">Siap Panen</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -354,9 +435,20 @@
         // Set default date to today
         document.getElementById('plant-date').valueAsDate = new Date();
     </script>
+    <!-- Floating Action Button -->
+    <button class="btn btn-warning btn-float btn-pulse btn-ripple" 
+            data-popup="dynamic" 
+            data-popup-type="bounce"
+            data-popup-title="⚡ Quick Actions"
+            data-popup-content="<div class='text-center'><i class='fas fa-bolt text-4xl text-yellow-500 mb-4'></i><p class='mb-4'>Aksi cepat untuk monitoring tanaman Anda</p><div class='btn-group-vertical'><button class='btn btn-success btn-full-width btn-shimmer' onclick='showNotification(\"Log penyiraman berhasil ditambahkan!\", \"success\")'>💧 Catat Penyiraman</button><button class='btn btn-info btn-full-width btn-shimmer' onclick='showNotification(\"Pengukuran pH telah dicatat!\", \"info\")'>🧪 Ukur pH</button><button class='btn btn-warning btn-full-width btn-shimmer' onclick='showNotification(\"Reminder nutrisi telah diset!\", \"warning\")'>🍃 Set Reminder Nutrisi</button><button class='btn btn-danger btn-full-width btn-shimmer' onclick='confirmAction(\"Apakah Anda yakin ingin menghapus log ini?\", \"Konfirmasi Hapus\").then(result => { if(result) showNotification(\"Log berhasil dihapus!\", \"success\"); })'>🗑️ Hapus Log</button></div></div>">
+        <i class="fas fa-bolt"></i>
+    </button>
+
     <!-- Mobile Navigation -->
     <script src="js/mobile-nav.js"></script>
     <!-- Animation Scripts -->
     <script src="js/animations.js"></script>
+    <!-- Pop-up Controller -->
+    <script src="js/popup-controller.js"></script>
 </body>
 </html>
