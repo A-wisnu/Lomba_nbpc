@@ -1,66 +1,69 @@
-# 🚀 LABTANAM MVP Deployment Guide
+# 🚀 LABTANAM MVP - Deployment Guide
 
-## 📋 Overview
+**Updated**: July 30, 2025  
+**Status**: ✅ Ready for Production Deployment
 
-LABTANAM MVP uses a modern deployment architecture:
-- **Frontend**: Static HTML/CSS/JS deployed on Vercel
-- **Backend**: Node.js API deployed on Railway
-- **Database**: Supabase (for future implementation)
-- **AI**: OpenRouter API integration
+---
 
 ## 🎯 Quick Deployment
 
-### Frontend (Vercel)
+### Frontend to Vercel
+```bash
+# 1. Install Vercel CLI (if not installed)
+npm i -g vercel
 
-1. **Connect GitHub Repository**
-   ```bash
-   # Push your code to GitHub
-   git add .
-   git commit -m "Deploy LABTANAM MVP"
-   git push origin main
-   ```
+# 2. Deploy from frontend directory
+cd frontend
+vercel --prod
 
-2. **Deploy to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-   - Set build settings:
-     - **Framework Preset**: Other
-     - **Root Directory**: `frontend`
-     - **Build Command**: (leave empty)
-     - **Output Directory**: (leave empty)
-   - Click "Deploy"
+# 3. Follow prompts:
+# - Project name: labtanam-frontend
+# - Framework: Other
+# - Build command: (leave empty)
+# - Output directory: ./
+```
 
-3. **Custom Domain (Optional)**
-   - Go to Project Settings → Domains
-   - Add your custom domain
-   - Configure DNS records as instructed
+### Backend to Railway
+```bash
+# 1. Install Railway CLI (if not installed)
+npm install -g @railway/cli
 
-### Backend (Railway)
+# 2. Deploy from backend directory
+cd backend
+railway login
+railway init
+railway up
 
-1. **Create Railway Account**
-   - Go to [railway.app](https://railway.app)
-   - Sign up with GitHub
+# 3. Set environment variables in Railway dashboard
+```
 
-2. **Deploy Backend**
-   - Click "New Project"
-   - Select "Deploy from GitHub repo"
-   - Choose your repository
-   - Set root directory to `backend`
-   - Railway will auto-detect Node.js and deploy
+---
 
-3. **Environment Variables**
-   ```env
-   NODE_ENV=production
-   OPENROUTER_API_KEY=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
-   FRONTEND_URL=https://your-vercel-domain.vercel.app
-   SUPABASE_URL=https://bvaxxlmhrzocbrqiykqq.supabase.co
-   SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ2YXh4bG1ocnpvY2JycWl5a29xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4NjMxMDMsImV4cCI6MjA2OTQzOTEwM30.GjDhx8BUR7Y4FUS2PZalEeDhKVt_zQWGTEV_5nKKgrg
-   ```
+## ⚠️ VERCEL CONFIGURATION FIX
 
-4. **Custom Domain (Optional)**
-   - Go to Settings → Networking
-   - Add custom domain
+**Issue Fixed**: `If 'rewrites', 'redirects', 'headers', 'cleanUrls' or 'trailingSlash' are used, then 'routes' cannot be present.`
+
+**Solution Applied**: ✅ Updated `vercel.json` to use modern Vercel configuration:
+
+```json
+{
+  "version": 2,
+  "name": "labtanam-frontend",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [...],
+  "redirects": [...]
+}
+```
+
+**Changes Made**:
+- ❌ Removed `routes` property (deprecated)
+- ❌ Removed `builds` property (auto-detected)
+- ✅ Added `cleanUrls: true` for clean URLs
+- ✅ Kept `trailingSlash: false` for consistency
+- ✅ Maintained security headers and caching rules
+
+---
 
 ## 🔧 Environment Configuration
 
