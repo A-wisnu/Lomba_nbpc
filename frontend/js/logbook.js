@@ -1,12 +1,14 @@
-// Logbook Management System
+// Logbook Management System with Supabase Integration
 class LogbookManager {
     constructor() {
-        this.logbook = this.loadLogbook();
+        this.logbook = [];
+        this.apiEndpoint = 'https://your-backend-url.railway.app/api/logbook'; // Update with actual backend URL
         this.init();
     }
 
-    init() {
+    async init() {
         this.bindEvents();
+        await this.loadLogbook();
         this.renderLogbook();
         this.updateStats();
     }
@@ -37,18 +39,61 @@ class LogbookManager {
         });
     }
 
-    loadLogbook() {
-        const stored = localStorage.getItem('labtanam-logbook');
-        return stored ? JSON.parse(stored) : [];
+    async loadLogbook() {
+        try {
+            const response = await fetch(this.apiEndpoint);
+            if (response.ok) {
+                const result = await response.json();
+                this.logbook = result.data || [];
+                console.log('✅ Logbook loaded from database');
+            } else {
+                console.warn('Failed to load from database, using localStorage fallback');
+                const stored = localStorage.getItem('labtanam-logbook');
+                this.logbook = stored ? JSON.parse(stored) : [];
+            }
+        } catch (error) {
+            console.error('Error loading logbook:', error);
+            // Fallback to localStorage
+            const stored = localStorage.getItem('labtanam-logbook');
+            this.logbook = stored ? JSON.parse(stored) : [];
+        }
     }
 
-    saveLogbook() {
-        localStorage.setItem('labtanam-logbook', JSON.stringify(this.logbook));
+    async saveToDatabase(entry) {
+        try {
+            const response = await fetch(this.apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    plant_name: entry.plantName,
+                    system_type: entry.systemType,
+                    plant_date: entry.plantDate,
+                    status: entry.status,
+                    ph_level: entry.phLevel || null,
+                    ec_level: entry.ecLevel || null,
+                    notes: entry.notes || null
+                })
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('✅ Entry saved to database');
+                return result.data;
+            } else {
+                throw new Error('Failed to save to database');
+            }
+        } catch (error) {
+            console.error('Error saving to database:', error);
+            // Fallback to localStorage
+            localStorage.setItem('labtanam-logbook', JSON.stringify(this.logbook));
+            throw error;
+        }
     }
 
-    addEntry() {
+    async addEntry() {
         const formData = {
-            id: Date.now().toString(),
             plantName: document.getElementById('plant-name').value,
             systemType: document.getElementById('system-type').value,
             plantDate: document.getElementById('plant-date').value,
@@ -59,12 +104,48 @@ class LogbookManager {
             createdAt: new Date().toISOString()
         };
 
-        this.logbook.unshift(formData);
-        this.saveLogbook();
-        this.renderLogbook();
-        this.updateStats();
-        this.resetForm();
-        this.showNotification('Log berhasil ditambahkan!', 'success');
+        try {
+            // Show loading state
+            const submitBtn = document.querySelector('#logbook-form button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Menyimpan...';
+            submitBtn.disabled = true;
+
+            // Save to database
+            const savedEntry = await this.saveToDatabase(formData);
+            
+            // Convert database format to frontend format
+            const frontendEntry = {
+                id: savedEntry.id.toString(),
+                plantName: savedEntry.plant_name,
+                systemType: savedEntry.system_type,
+                plantDate: savedEntry.plant_date,
+                status: savedEntry.status,
+                phLevel: savedEntry.ph_level,
+                ecLevel: savedEntry.ec_level,
+                notes: savedEntry.notes,
+                createdAt: savedEntry.created_at
+            };
+
+            this.logbook.unshift(frontendEntry);
+            this.renderLogbook();
+            this.updateStats();
+            this.resetForm();
+            this.showNotification('Log berhasil ditambahkan!', 'success');
+
+            // Restore button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+
+        } catch (error) {
+            console.error('Error adding entry:', error);
+            this.showNotification('Gagal menyimpan log. Coba lagi.', 'error');
+            
+            // Restore button
+            const submitBtn = document.querySelector('#logbook-form button[type="submit"]');
+            submitBtn.innerHTML = '<i class="fas fa-save mr-2"></i>Simpan Log';
+            submitBtn.disabled = false;
+        }
     }
 
     deleteEntry(id) {

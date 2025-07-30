@@ -52,8 +52,10 @@ LABTANAM MVP uses a modern deployment architecture:
 3. **Environment Variables**
    ```env
    NODE_ENV=production
-   OPENROUTER_API_KEY=your_actual_key_here
+   OPENROUTER_API_KEY=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
    FRONTEND_URL=https://your-vercel-domain.vercel.app
+   SUPABASE_URL=https://bvaxxlmhrzocbrqiykqq.supabase.co
+   SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ2YXh4bG1ocnpvY2JycWl5a29xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4NjMxMDMsImV4cCI6MjA2OTQzOTEwM30.GjDhx8BUR7Y4FUS2PZalEeDhKVt_zQWGTEV_5nKKgrg
    ```
 
 4. **Custom Domain (Optional)**
@@ -70,15 +72,15 @@ LABTANAM MVP uses a modern deployment architecture:
 NODE_ENV=production
 PORT=3000
 
-# OpenRouter AI API (Get from https://openrouter.ai)
-OPENROUTER_API_KEY=sk-or-v1-your-key-here
+# OpenRouter AI API (Kimi model - free tier)
+OPENROUTER_API_KEY=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
 
 # Frontend URL (Update with your Vercel domain)
 FRONTEND_URL=https://labtanam.vercel.app
 
-# Optional: Future Supabase Integration
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_ANON_KEY=your-supabase-anon-key
+# Supabase Database Integration
+SUPABASE_URL=https://bvaxxlmhrzocbrqiykqq.supabase.co
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ2YXh4bG1ocnpvY2JycWl5a29xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4NjMxMDMsImV4cCI6MjA2OTQzOTEwM30.GjDhx8BUR7Y4FUS2PZalEeDhKVt_zQWGTEV_5nKKgrg
 ```
 
 ### Getting OpenRouter API Key

@@ -85,9 +85,9 @@ router.post('/', async (req, res) => {
             { role: 'user', content: message.trim() }
         ];
 
-        // Call OpenRouter API
+        // Call OpenRouter API with Kimi model
         const response = await axios.post(OPENROUTER_API_URL, {
-            model: 'openai/gpt-3.5-turbo',
+            model: 'moonshotai/kimi-k2:free',
             messages: messages,
             max_tokens: 800,
             temperature: 0.7,

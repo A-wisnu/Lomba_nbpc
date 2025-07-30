@@ -6,6 +6,7 @@ const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
 const chatRoutes = require('./routes/chat');
+const logbookRoutes = require('./routes/logbook');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -63,6 +64,7 @@ app.get('/health', (req, res) => {
 
 // API routes
 app.use('/api/chat', chatLimiter, chatRoutes);
+app.use('/api/logbook', logbookRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -71,7 +73,8 @@ app.get('/', (req, res) => {
         version: '1.0.0',
         endpoints: {
             health: '/health',
-            chat: '/api/chat'
+            chat: '/api/chat',
+            logbook: '/api/logbook'
         },
         documentation: 'https://github.com/labtanam/api-docs'
     });
@@ -85,7 +88,8 @@ app.use('*', (req, res) => {
         availableEndpoints: [
             '/',
             '/health',
-            '/api/chat'
+            '/api/chat',
+            '/api/logbook'
         ]
     });
 });
