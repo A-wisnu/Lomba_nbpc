@@ -21,10 +21,10 @@ In Vercel dashboard, go to your project settings and add these environment varia
 
 ```
 NODE_ENV=production
-SUPABASE_URL=your_supabase_url_here
-SUPABASE_ANON_KEY=your_supabase_anon_key_here
-OPENAI_API_KEY=your_openai_api_key_here
-GEMINI_API_KEY=your_gemini_api_key_here
+SUPABASE_URL=https://bvaxxlmhrzocbrqiykqq.supabase.co
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ2YXh4bG1ocnpvY2JycWl5a29xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM4NjMxMDMsImV4cCI6MjA2OTQzOTEwM30.GjDhx8BUR7Y4FUS2PZalEeDhKVt_zQWGTEV_5nKKgrg
+OPENROUTER_API_KEY=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
+OPENROUTER_MODEL=moonshotai/kimi-k2:free
 ```
 
 ### 3. Deploy
