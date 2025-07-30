@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#16a34a',
+                        secondary: '#22c55e',
+                        accent: '#84cc16',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-primary">🌱 LABTANAM</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Beranda</a>
+                    <a href="edukasi.html" class="text-gray-700 hover:text-primary transition-colors">Edukasi</a>
+                    <a href="monitoring.html" class="text-primary font-medium border-b-2 border-primary pb-1">Monitoring</a>
+                    <a href="chatbot.html" class="text-gray-700 hover:text-primary transition-colors">ChatBot AI</a>
+                    <a href="komunitas.html" class="text-gray-700 hover:text-primary transition-colors">Komunitas</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Monitoring Tanaman</h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Pantau perkembangan tanaman hidroponik Anda dengan logbook digital yang mudah dan praktis
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-8 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-primary" id="total-plants">0</div>
+                    <div class="text-gray-600 text-sm">Total Tanaman</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600" id="total-logs">0</div>
+                    <div class="text-gray-600 text-sm">Log Hari Ini</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-orange-600" id="active-plants">0</div>
+                    <div class="text-gray-600 text-sm">Sedang Tumbuh</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600" id="harvest-ready">0</div>
+                    <div class="text-gray-600 text-sm">Siap Panen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Add New Log Form -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                        <i class="fas fa-plus-circle text-primary mr-2"></i>Tambah Log Baru
+                    </h2>
+                    
+                    <form id="logbook-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Nama Tanaman</label>
+                            <input type="text" id="plant-name" required 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                   placeholder="Contoh: Selada Hijau">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Jenis Sistem</label>
+                            <select id="system-type" required 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                <option value="">Pilih Sistem</option>
+                                <option value="NFT">NFT (Nutrient Film Technique)</option>
+                                <option value="DWC">DWC (Deep Water Culture)</option>
+                                <option value="Ebb & Flow">Ebb & Flow</option>
+                                <option value="Drip System">Drip System</option>
+                                <option value="Aeroponik">Aeroponik</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal Tanam</label>
+                            <input type="date" id="plant-date" required 
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
+                            <select id="plant-status" required 
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                <option value="">Pilih Status</option>
+                                <option value="Benih">Benih</option>
+                                <option value="Kecambah">Kecambah</option>
+                                <option value="Vegetatif">Vegetatif</option>
+                                <option value="Berbunga">Berbunga</option>
+                                <option value="Siap Panen">Siap Panen</option>
+                                <option value="Dipanen">Dipanen</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">pH Air</label>
+                            <input type="number" id="ph-level" step="0.1" min="0" max="14"
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                   placeholder="6.5">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">EC/TDS (ppm)</label>
+                            <input type="number" id="ec-level" min="0"
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                   placeholder="800">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Catatan</label>
+                            <textarea id="notes" rows="3"
+                                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                      placeholder="Tambahkan catatan perkembangan tanaman..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-green-700 transition-colors">
+                            <i class="fas fa-save mr-2"></i>Simpan Log
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Logbook History -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-md">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4 sm:mb-0">
+                                <i class="fas fa-history text-blue-600 mr-2"></i>Riwayat Logbook
+                            </h2>
+                            <div class="flex space-x-2">
+                                <button id="export-btn" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-green-700">
+                                    <i class="fas fa-download mr-1"></i>Export
+                                </button>
+                                <button id="clear-all-btn" class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-700">
+                                    <i class="fas fa-trash mr-1"></i>Hapus Semua
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter & Search -->
+                    <div class="p-6 bg-gray-50 border-b border-gray-200">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <div class="flex-1">
+                                <input type="text" id="search-input" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                       placeholder="Cari berdasarkan nama tanaman...">
+                            </div>
+                            <div>
+                                <select id="status-filter" 
+                                        class="px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                    <option value="">Semua Status</option>
+                                    <option value="Benih">Benih</option>
+                                    <option value="Kecambah">Kecambah</option>
+                                    <option value="Vegetatif">Vegetatif</option>
+                                    <option value="Berbunga">Berbunga</option>
+                                    <option value="Siap Panen">Siap Panen</option>
+                                    <option value="Dipanen">Dipanen</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Logbook Entries -->
+                    <div id="logbook-entries" class="divide-y divide-gray-200">
+                        <!-- Entries will be inserted here -->
+                    </div>
+                    
+                    <!-- Empty State -->
+                    <div id="empty-state" class="p-12 text-center">
+                        <div class="text-gray-400 mb-4">
+                            <i class="fas fa-seedling text-6xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-600 mb-2">Belum Ada Log Tanaman</h3>
+                        <p class="text-gray-500">Mulai catat perkembangan tanaman hidroponik Anda dengan menambah log baru.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tips Section -->
+    <section class="bg-gradient-to-r from-green-50 to-blue-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Tips Monitoring Efektif</h2>
+                <p class="text-xl text-gray-600">Panduan untuk memaksimalkan hasil monitoring tanaman</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Catat Rutin</h3>
+                    <p class="text-gray-600">Lakukan pencatatan setiap hari untuk memantau perkembangan tanaman secara konsisten.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-tint text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Monitor pH & EC</h3>
+                    <p class="text-gray-600">Periksa dan catat nilai pH (6.0-6.5) dan EC (800-1200 ppm) secara teratur.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-camera text-orange-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Dokumentasi Visual</h3>
+                    <p class="text-gray-600">Ambil foto perkembangan tanaman untuk melihat perubahan dari waktu ke waktu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌱 LABTANAM</h3>
+                    <p class="text-gray-400">Platform hidroponik terdepan untuk masa depan pertanian yang berkelanjutan.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Fitur</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="edukasi.html" class="hover:text-white">Edukasi</a></li>
+                        <li><a href="monitoring.html" class="hover:text-white">Monitoring</a></li>
+                        <li><a href="chatbot.html" class="hover:text-white">AI ChatBot</a></li>
+                        <li><a href="komunitas.html" class="hover:text-white">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Dukungan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 LABTANAM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/logbook.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set default date to today
+        document.getElementById('plant-date').valueAsDate = new Date();
+    </script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot AI - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#16a34a',
+                        secondary: '#22c55e',
+                        accent: '#84cc16',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-primary">🌱 LABTANAM</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Beranda</a>
+                    <a href="edukasi.html" class="text-gray-700 hover:text-primary transition-colors">Edukasi</a>
+                    <a href="monitoring.html" class="text-gray-700 hover:text-primary transition-colors">Monitoring</a>
+                    <a href="chatbot.html" class="text-primary font-medium border-b-2 border-primary pb-1">ChatBot AI</a>
+                    <a href="komunitas.html" class="text-gray-700 hover:text-primary transition-colors">Komunitas</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-purple-600 to-indigo-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <i class="fas fa-robot mr-3"></i>ChatBot AI Hidroponik
+                </h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Konsultasi langsung dengan AI ahli pertanian untuk mendapatkan solusi masalah hidroponik Anda
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Interface -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-robot text-purple-600 text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">AI Hidroponik Assistant</h3>
+                        <p class="text-sm opacity-90">Online - Siap membantu Anda</p>
+                    </div>
+                    <div class="ml-auto">
+                        <button id="clear-chat" class="bg-white bg-opacity-20 hover:bg-opacity-30 px-3 py-1 rounded text-sm transition-colors">
+                            <i class="fas fa-trash mr-1"></i>Hapus Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div id="chat-messages" class="h-96 overflow-y-auto p-6 space-y-4">
+                <!-- Welcome Message -->
+                <div class="flex items-start">
+                    <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-3 max-w-xs lg:max-w-md">
+                        <p class="text-gray-800">
+                            Halo! Saya AI Assistant untuk hidroponik. Saya bisa membantu Anda dengan:
+                            <br>• Masalah nutrisi dan pH
+                            <br>• Pemilihan tanaman
+                            <br>• Sistem hidroponik
+                            <br>• Diagnosis penyakit tanaman
+                            <br><br>Silakan tanyakan apa saja! 🌱
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="border-t border-gray-200 p-4">
+                <form id="chat-form" class="flex space-x-3">
+                    <input type="text" id="chat-input" 
+                           class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                           placeholder="Ketik pertanyaan Anda tentang hidroponik..."
+                           autocomplete="off">
+                    <button type="submit" id="send-button"
+                            class="bg-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-purple-700 transition-colors">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Quick Questions -->
+        <div class="mt-8">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Pertanyaan Cepat</h3>
+            <div class="grid md:grid-cols-2 gap-3">
+                <button class="quick-question bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-tint text-blue-500 mr-2"></i>
+                    Bagaimana cara mengatur pH air yang ideal?
+                </button>
+                <button class="quick-question bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-leaf text-green-500 mr-2"></i>
+                    Tanaman saya layu, apa penyebabnya?
+                </button>
+                <button class="quick-question bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-seedling text-yellow-500 mr-2"></i>
+                    Sistem hidroponik mana yang cocok untuk pemula?
+                </button>
+                <button class="quick-question bg-white border border-gray-200 rounded-lg p-3 text-left hover:bg-gray-50 transition-colors">
+                    <i class="fas fa-bug text-red-500 mr-2"></i>
+                    Cara mengatasi hama pada tanaman hidroponik?
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="bg-gradient-to-r from-purple-50 to-indigo-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Keunggulan AI Assistant</h2>
+                <p class="text-xl text-gray-600">Teknologi AI terdepan untuk solusi hidroponik</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">AI Cerdas</h3>
+                    <p class="text-gray-600">Dilatih dengan data pertanian terkini dan pengalaman ahli hidroponik</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">24/7 Tersedia</h3>
+                    <p class="text-gray-600">Dapatkan bantuan kapan saja tanpa perlu menunggu konsultan</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-language text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bahasa Indonesia</h3>
+                    <p class="text-gray-600">Komunikasi dalam bahasa Indonesia yang mudah dipahami</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-lightbulb text-yellow-600 text-2xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-yellow-800 mb-2">Tips Menggunakan ChatBot</h3>
+                        <ul class="text-yellow-700 space-y-1">
+                            <li>• Berikan detail spesifik tentang masalah Anda</li>
+                            <li>• Sertakan informasi seperti jenis tanaman, sistem yang digunakan</li>
+                            <li>• Upload foto jika memungkinkan (fitur akan segera hadir)</li>
+                            <li>• Jangan ragu untuk bertanya lanjutan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌱 LABTANAM</h3>
+                    <p class="text-gray-400">Platform hidroponik terdepan untuk masa depan pertanian yang berkelanjutan.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Fitur</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="edukasi.html" class="hover:text-white">Edukasi</a></li>
+                        <li><a href="monitoring.html" class="hover:text-white">Monitoring</a></li>
+                        <li><a href="chatbot.html" class="hover:text-white">AI ChatBot</a></li>
+                        <li><a href="komunitas.html" class="hover:text-white">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Dukungan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 LABTANAM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/chatbot.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

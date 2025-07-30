@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunitas - LABTANAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#16a34a',
+                        secondary: '#22c55e',
+                        accent: '#84cc16',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-bold text-primary">🌱 LABTANAM</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-primary transition-colors">Beranda</a>
+                    <a href="edukasi.html" class="text-gray-700 hover:text-primary transition-colors">Edukasi</a>
+                    <a href="monitoring.html" class="text-gray-700 hover:text-primary transition-colors">Monitoring</a>
+                    <a href="chatbot.html" class="text-gray-700 hover:text-primary transition-colors">ChatBot AI</a>
+                    <a href="komunitas.html" class="text-primary font-medium border-b-2 border-primary pb-1">Komunitas</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-orange-600 to-red-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    <i class="fas fa-users mr-3"></i>Komunitas LABTANAM
+                </h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Bergabunglah dengan ribuan petani hidroponik Indonesia. Berbagi pengalaman, tips, dan dapatkan peralatan terbaik
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Links -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- WhatsApp Community -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 p-8 text-white text-center">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fab fa-whatsapp text-green-500 text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Grup WhatsApp</h3>
+                        <p class="opacity-90">Diskusi real-time dengan sesama petani</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Chat langsung dengan ahli hidroponik</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Sharing foto hasil panen</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Tips dan trik dari pengalaman nyata</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Troubleshooting masalah tanaman</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Info event dan workshop</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-users text-green-600 mr-2"></i>
+                                <span class="font-semibold text-green-800">5,200+ Anggota Aktif</span>
+                            </div>
+                            <p class="text-green-700 text-sm">Komunitas hidroponik terbesar di Indonesia</p>
+                        </div>
+                        
+                        <a href="https://chat.whatsapp.com/labtanam-community" target="_blank" 
+                           class="block w-full bg-green-500 text-white text-center py-3 px-6 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+                            <i class="fab fa-whatsapp mr-2"></i>Gabung Grup WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Shopee Store -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="bg-gradient-to-br from-orange-500 to-red-500 p-8 text-white text-center">
+                        <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shopping-cart text-orange-500 text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Toko Shopee</h3>
+                        <p class="opacity-90">Peralatan hidroponik berkualitas</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>Nutrisi AB Mix premium</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>pH meter dan EC meter akurat</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>Sistem hidroponik siap pakai</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>Benih unggul dan rockwool</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-3"></i>
+                                <span>Gratis konsultasi pembelian</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-star text-orange-600 mr-2"></i>
+                                <span class="font-semibold text-orange-800">4.9/5 Rating (2.8k+ Review)</span>
+                            </div>
+                            <p class="text-orange-700 text-sm">Trusted seller dengan pengiriman ke seluruh Indonesia</p>
+                        </div>
+                        
+                        <a href="https://shopee.co.id/labtanam.official" target="_blank" 
+                           class="block w-full bg-orange-500 text-white text-center py-3 px-6 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                            <i class="fas fa-shopping-cart mr-2"></i>Kunjungi Toko Shopee
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Produk Unggulan</h2>
+                <p class="text-xl text-gray-600">Peralatan hidroponik pilihan dari toko kami</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-gray-50 rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-flask text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Nutrisi AB Mix</h3>
+                    <p class="text-gray-600 text-sm mb-3">Nutrisi lengkap untuk semua jenis tanaman hidroponik</p>
+                    <div class="text-primary font-bold text-lg">Rp 45.000</div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-gray-50 rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-thermometer-half text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">pH Meter Digital</h3>
+                    <p class="text-gray-600 text-sm mb-3">Alat ukur pH akurat dengan kalibrasi otomatis</p>
+                    <div class="text-primary font-bold text-lg">Rp 125.000</div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-gray-50 rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-seedling text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Starter Kit NFT</h3>
+                    <p class="text-gray-600 text-sm mb-3">Sistem NFT komplet untuk 20 tanaman</p>
+                    <div class="text-primary font-bold text-lg">Rp 850.000</div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-gray-50 rounded-lg p-6 text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-sun text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">LED Grow Light</h3>
+                    <p class="text-gray-600 text-sm mb-3">Lampu tanam full spectrum 100W hemat listrik</p>
+                    <div class="text-primary font-bold text-lg">Rp 320.000</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="https://shopee.co.id/labtanam.official" target="_blank" 
+                   class="inline-block bg-orange-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                    <i class="fas fa-external-link-alt mr-2"></i>Lihat Semua Produk
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Komunitas dalam Angka</h2>
+                <p class="text-xl opacity-90">Bergabunglah dengan komunitas hidroponik terbesar di Indonesia</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">5,200+</div>
+                    <div class="text-green-100">Anggota WhatsApp</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">15,000+</div>
+                    <div class="text-green-100">Followers Shopee</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">2,800+</div>
+                    <div class="text-green-100">Review Positif</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <div class="text-green-100">Kota Terjangkau</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Cerita Sukses Anggota</h2>
+                <p class="text-xl text-gray-600">Inspirasi dari petani hidroponik yang telah berhasil</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Story 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Budi Santoso</h4>
+                            <p class="text-gray-600 text-sm">Jakarta</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Berkat komunitas LABTANAM, saya berhasil membangun bisnis sayuran hidroponik dengan omzet 10 juta per bulan. Tips dari grup WhatsApp sangat membantu!"</p>
+                    <div class="flex items-center text-yellow-500">
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                    </div>
+                </div>
+                
+                <!-- Story 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sari Dewi</h4>
+                            <p class="text-gray-600 text-sm">Surabaya</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Sebagai ibu rumah tangga, hidroponik membantu saya menghemat belanja sayuran dan bahkan bisa dijual ke tetangga. Terima kasih LABTANAM!"</p>
+                    <div class="flex items-center text-yellow-500">
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                    </div>
+                </div>
+                
+                <!-- Story 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Ahmad Rizki</h4>
+                            <p class="text-gray-600 text-sm">Bandung</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Dari hobi jadi bisnis! Sekarang saya supply sayuran hidroponik ke 5 restoran di Bandung. Kualitas produk LABTANAM memang terbaik."</p>
+                    <div class="flex items-center text-yellow-500">
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                        <i class="fas fa-star mr-1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-4">Siap Bergabung dengan Komunitas?</h2>
+            <p class="text-xl mb-8 opacity-90">Jangan lewatkan kesempatan untuk belajar, berbagi, dan berkembang bersama ribuan petani hidroponik lainnya</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://chat.whatsapp.com/labtanam-community" target="_blank" 
+                   class="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>Gabung WhatsApp
+                </a>
+                <a href="https://shopee.co.id/labtanam.official" target="_blank" 
+                   class="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors">
+                    <i class="fas fa-shopping-cart mr-2"></i>Kunjungi Toko
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🌱 LABTANAM</h3>
+                    <p class="text-gray-400">Platform hidroponik terdepan untuk masa depan pertanian yang berkelanjutan.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Fitur</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="edukasi.html" class="hover:text-white">Edukasi</a></li>
+                        <li><a href="monitoring.html" class="hover:text-white">Monitoring</a></li>
+                        <li><a href="chatbot.html" class="hover:text-white">AI ChatBot</a></li>
+                        <li><a href="komunitas.html" class="hover:text-white">Komunitas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Dukungan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white">Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 LABTANAM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
