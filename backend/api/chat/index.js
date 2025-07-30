@@ -8,7 +8,7 @@ const app = express();
 // CORS configuration for Vercel
 const corsOptions = {
     origin: process.env.NODE_ENV === 'production' 
-        ? ['https://labtanam.vercel.app', 'https://labtanam-frontend.vercel.app']
+        ? ['https://labtanam.vercel.app', 'https://labtanam-frontend.vercel.app', 'https://lomba-nbpc-3o8t.vercel.app']
         : ['http://localhost:3000', 'http://localhost:5500', 'http://127.0.0.1:5500'],
     credentials: true,
     optionsSuccessStatus: 200
