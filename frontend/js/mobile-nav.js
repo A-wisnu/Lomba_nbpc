@@ -18,6 +18,13 @@ class MobileNavController {
         this.setupEventListeners();
         this.setActivePage();
         this.handleScrollBehavior();
+        
+        // Debug: Log current page detection
+        console.log('🔍 Mobile Nav Debug:', {
+            currentPage: this.currentPage,
+            pathname: window.location.pathname,
+            bodyClasses: document.body.className
+        });
     }
 
     /**
@@ -27,11 +34,19 @@ class MobileNavController {
         const path = window.location.pathname;
         const fileName = path.split('/').pop() || 'index.html';
         
-        if (fileName === 'index.html' || fileName === '') return 'home';
-        if (fileName === 'edukasi.html') return 'edukasi';
-        if (fileName === 'monitoring.html') return 'monitoring';
-        if (fileName === 'chatbot.html') return 'chatbot';
-        if (fileName === 'komunitas.html') return 'komunitas';
+        // More robust page detection
+        if (fileName === 'index.html' || fileName === '' || path === '/' || path.endsWith('/')) return 'home';
+        if (fileName === 'edukasi.html' || path.includes('edukasi')) return 'edukasi';
+        if (fileName === 'monitoring.html' || path.includes('monitoring')) return 'monitoring';
+        if (fileName === 'chatbot.html' || path.includes('chatbot')) return 'chatbot';
+        if (fileName === 'komunitas.html' || path.includes('komunitas')) return 'komunitas';
+        
+        // Fallback: check if we're on any specific page
+        const bodyClasses = document.body.className;
+        if (bodyClasses.includes('page-edukasi')) return 'edukasi';
+        if (bodyClasses.includes('page-monitoring')) return 'monitoring';
+        if (bodyClasses.includes('page-chatbot')) return 'chatbot';
+        if (bodyClasses.includes('page-komunitas')) return 'komunitas';
         
         return 'home';
     }
@@ -154,10 +169,21 @@ class MobileNavController {
             if (itemPage === this.currentPage) {
                 item.classList.add('active');
                 this.animateActiveIndicator(item);
+                
+                // Debug: Log active item
+                console.log('✅ Active nav item:', itemPage);
             } else {
                 item.classList.remove('active');
             }
         });
+        
+        // Force re-detection if no active item found
+        const activeItems = document.querySelectorAll('.bottom-nav-item.active');
+        if (activeItems.length === 0) {
+            console.log('⚠️ No active nav item found, re-detecting...');
+            this.currentPage = this.getCurrentPage();
+            this.setActivePage();
+        }
     }
 
     /**
