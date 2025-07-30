@@ -77,8 +77,8 @@
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 ">
-                        <a href="index.html" class="text-2xl font-bold text-logo-text">
-                            <i class="fas fa-leaf mr-2 text-logo-accent pulse"></i>
+                        <a href="index.html" class="flex items-center text-2xl font-bold text-logo-text">
+                            <img src="assets/logo.jpg" alt="LABTANAM Logo" class="w-10 h-10 mr-3 rounded-lg object-cover shadow-md">
                             <span class="text-reveal">LABTANAM</span>
                         </a>
                     </div>
@@ -145,7 +145,7 @@
                 <!-- Real-time Stats Dashboard -->
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-6xl mx-auto mb-8 dashboard-stats">
                     <!-- Temperature Card -->
-                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group dashboard-card stagger-1">
+                    <div class="dashboard-card-enhanced group stagger-1">
                         <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-thermometer-half text-orange-400 text-2xl"></i>
                         </div>
@@ -157,7 +157,7 @@
                     </div>
                     
                     <!-- pH Level Card -->
-                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group dashboard-card stagger-2">
+                    <div class="dashboard-card-enhanced group stagger-2">
                         <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-flask text-green-400 text-2xl"></i>
                         </div>
@@ -169,7 +169,7 @@
                     </div>
                     
                     <!-- Active Plants Card -->
-                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group dashboard-card stagger-3">
+                    <div class="dashboard-card-enhanced group stagger-3">
                         <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-seedling text-emerald-400 text-2xl"></i>
                         </div>
@@ -181,7 +181,7 @@
                     </div>
                     
                     <!-- System Health Card -->
-                    <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group dashboard-card stagger-4">
+                    <div class="dashboard-card-enhanced group stagger-4">
                         <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                             <i class="fas fa-heartbeat text-cyan-400 text-2xl"></i>
                         </div>
@@ -222,30 +222,30 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <!-- Total Tanaman -->
-                <div class="stats-card">
+                <div class="stats-card-enhanced">
                     <div class="stats-icon">🌱</div>
-                    <div class="stats-number" id="total-plants">12</div>
+                    <div class="stats-number" id="total-plants">0</div>
                     <div class="stats-label">Total Tanaman</div>
                 </div>
 
                                 <!-- Log Hari Ini -->
-                <div class="stats-card">
+                <div class="stats-card-enhanced">
                     <div class="stats-icon">📝</div>
-                    <div class="stats-number" id="total-logs">8</div>
+                    <div class="stats-number" id="total-logs">0</div>
                     <div class="stats-label">Log Hari Ini</div>
                 </div>
 
                                 <!-- Sedang Tumbuh -->
-                <div class="stats-card">
+                <div class="stats-card-enhanced">
                     <div class="stats-icon">🌿</div>
-                    <div class="stats-number" id="active-plants">9</div>
+                    <div class="stats-number" id="active-plants">0</div>
                     <div class="stats-label">Sedang Tumbuh</div>
                 </div>
 
                                 <!-- Siap Panen -->
-                <div class="stats-card">
+                <div class="stats-card-enhanced">
                     <div class="stats-icon">🥬</div>
-                    <div class="stats-number" id="harvest-ready">3</div>
+                    <div class="stats-number" id="harvest-ready">0</div>
                     <div class="stats-label">Siap Panen</div>
                 </div>
             </div>
