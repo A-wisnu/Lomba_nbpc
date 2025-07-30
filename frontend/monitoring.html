@@ -6,7 +6,8 @@
     <title>Monitoring - LABTANAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/clean-ui.css">
+    <link rel="stylesheet" href="assets/css/sophisticated-colors.css">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
     <link rel="stylesheet" href="assets/css/mobile-nav.css">
     <script>
         tailwind.config = {
@@ -92,15 +93,15 @@
                                 <!-- Quick Action Buttons -->
                 <div class="flex flex-wrap gap-4 justify-center mb-8" data-animation="fade-in-up" data-delay="900">
                     <button class="btn">
-                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus btn-icon"></i>
                         <span>Tambah Tanaman</span>
                     </button>
                     <button class="btn">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-chart-line btn-icon"></i>
                         <span>Lihat Analisis</span>
                     </button>
                     <button class="btn">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-lightbulb btn-icon"></i>
                         <span>Tips Hari Ini</span>
                     </button>
                 </div>
@@ -181,14 +182,14 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Nama Tanaman</label>
                             <input type="text" id="plant-name" required 
-                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                   class="form-input-enhanced focus:ring-primary focus:border-primary"
                                    placeholder="Contoh: Selada Hijau">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Jenis Sistem</label>
                             <select id="system-type" required 
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                    class="form-input-enhanced focus:ring-primary focus:border-primary">
                                 <option value="">Pilih Sistem</option>
                                 <option value="NFT">NFT (Nutrient Film Technique)</option>
                                 <option value="DWC">DWC (Deep Water Culture)</option>
@@ -201,13 +202,13 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Tanggal Tanam</label>
                             <input type="date" id="plant-date" required 
-                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                   class="form-input-enhanced focus:ring-primary focus:border-primary">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Status</label>
                             <select id="plant-status" required 
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                    class="form-input-enhanced focus:ring-primary focus:border-primary">
                                 <option value="">Pilih Status</option>
                                 <option value="Benih">Benih</option>
                                 <option value="Kecambah">Kecambah</option>
@@ -221,27 +222,27 @@
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">pH Air</label>
                             <input type="number" id="ph-level" step="0.1" min="0" max="14"
-                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                   class="form-input-enhanced focus:ring-primary focus:border-primary"
                                    placeholder="6.5">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">EC/TDS (ppm)</label>
                             <input type="number" id="ec-level" min="0"
-                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                   class="form-input-enhanced focus:ring-primary focus:border-primary"
                                    placeholder="800">
                         </div>
                         
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-2">Catatan</label>
                             <textarea id="notes" rows="3"
-                                      class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                      class="form-input-enhanced focus:ring-primary focus:border-primary"
                                       placeholder="Tambahkan catatan perkembangan tanaman..."></textarea>
                         </div>
                         
-                        <button type="submit" 
-                                class="w-full bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                            <i class="fas fa-save mr-2"></i>Simpan Log
+                        <button type="submit" class="btn btn-success btn-full">
+                            <i class="fas fa-save btn-icon"></i>
+                            <span>Simpan Log</span>
                         </button>
                     </form>
                 </div>
@@ -271,7 +272,7 @@
                         <div class="flex flex-col sm:flex-row gap-4">
                             <div class="flex-1">
                                 <input type="text" id="search-input" 
-                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"
+                                       class="form-input-enhanced focus:ring-primary focus:border-primary"
                                        placeholder="Cari berdasarkan nama tanaman...">
                             </div>
                             <div>

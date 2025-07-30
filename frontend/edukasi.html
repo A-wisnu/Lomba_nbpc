@@ -6,7 +6,8 @@
     <title>Edukasi - LABTANAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/clean-ui.css">
+    <link rel="stylesheet" href="assets/css/sophisticated-colors.css">
+    <link rel="stylesheet" href="assets/css/enhanced-ui.css">
     <link rel="stylesheet" href="assets/css/mobile-nav.css">
     <script>
         tailwind.config = {
@@ -111,10 +112,10 @@
                 
                 <!-- CTA Button -->
                 <div class="fade-in-up stagger-5" data-animation="fade-in-up" data-delay="1200">
-                    <button onclick="scrollToContent()" class="btn">
-                        <i class="fas fa-play"></i>
+                    <button onclick="scrollToContent()" class="btn btn-gradient-nature btn-xl">
+                        <i class="fas fa-play btn-icon"></i>
                         <span>Mulai Belajar Sekarang</span>
-                        <i class="fas fa-arrow-down"></i>
+                        <i class="fas fa-arrow-down btn-icon btn-icon-right"></i>
                     </button>
                 </div>
             </div>
@@ -130,17 +131,21 @@
     <!-- Filter Tabs -->
     <div id="content-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="flex flex-wrap gap-4 justify-center mb-8">
-            <button class="btn" data-filter="all">
-                Semua Materi
+            <button class="btn btn-primary" data-filter="all">
+                <i class="fas fa-list btn-icon"></i>
+                <span>Semua Materi</span>
             </button>
-            <button class="btn" data-filter="beginner">
-                Pemula
+            <button class="btn btn-soft" data-filter="beginner">
+                <i class="fas fa-seedling btn-icon"></i>
+                <span>Pemula</span>
             </button>
-            <button class="btn" data-filter="intermediate">
-                Menengah
+            <button class="btn btn-soft-secondary" data-filter="intermediate">
+                <i class="fas fa-leaf btn-icon"></i>
+                <span>Menengah</span>
             </button>
-            <button class="btn" data-filter="advanced">
-                Lanjutan
+            <button class="btn btn-soft-accent" data-filter="advanced">
+                <i class="fas fa-tree btn-icon"></i>
+                <span>Lanjutan</span>
             </button>
         </div>
     </div>
@@ -184,13 +189,13 @@
                         </div>
                         <span class="text-green-600 font-semibold">Gratis</span>
                     </div>
-                                        <div class="flex gap-2">
-                        <button class="btn">
-                            <i class="fas fa-play"></i>
+                    <div class="btn-group">
+                        <button class="btn btn-success btn-sm">
+                            <i class="fas fa-play btn-icon"></i>
                             <span>Tonton</span>
                         </button>
-                        <button class="btn">
-                            <i class="fas fa-bookmark"></i>
+                        <button class="btn btn-outline btn-sm btn-icon-only">
+                            <i class="fas fa-bookmark btn-icon"></i>
                         </button>
                     </div>
                 </div>
