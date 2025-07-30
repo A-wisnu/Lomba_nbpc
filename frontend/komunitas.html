@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/mobile-nav.css">
+    <link rel="stylesheet" href="assets/css/button-animations.css">
     <script>
         tailwind.config = {
             theme: {
@@ -440,5 +441,16 @@
     <script src="js/mobile-nav.js"></script>
     <!-- Animation Scripts -->
     <script src="js/animations.js"></script>
+    <!-- Floating Action Button -->
+    <button class="btn btn-success btn-float btn-pulse btn-ripple" 
+            data-popup="dynamic" 
+            data-popup-type="bounce"
+            data-popup-title="👥 Komunitas Actions"
+            data-popup-content="<div class='text-center'><i class='fas fa-users text-4xl text-green-500 mb-4'></i><p class='mb-4'>Bergabung dan berinteraksi dengan komunitas hidroponik!</p><div class='btn-group-vertical'><button class='btn btn-primary btn-full-width btn-shimmer' onclick='showNotification(\"Postingan baru berhasil dibuat!\", \"success\")'>✍️ Buat Postingan</button><button class='btn btn-info btn-full-width btn-shimmer' onclick='showNotification(\"Bergabung dengan grup diskusi!\", \"info\")'>💬 Gabung Diskusi</button><button class='btn btn-warning btn-full-width btn-shimmer' onclick='showNotification(\"Event hidroponik akan segera dimulai!\", \"warning\")'>📅 Lihat Event</button><button class='btn btn-success btn-full-width btn-shimmer' onclick='showNotification(\"Undangan teman berhasil dikirim!\", \"success\")'>👨‍👩‍👧‍👦 Undang Teman</button></div></div>">
+        <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Pop-up Controller -->
+    <script src="js/popup-controller.js"></script>
 </body>
 </html>
