@@ -244,10 +244,10 @@ Bisa jelaskan lebih spesifik masalah atau hal yang ingin Anda ketahui? Semakin d
 
 Contoh pertanyaan yang baik:
 "Selada saya daunnya menguning di bagian bawah, pH 6.2, EC 800 ppm, sudah 3 minggu tanam. Kenapa ya?"`;
-        }
     }
 
-    addMessage(content, sender, isError = false) {
+    addMessage(content, sender, isError) {
+        isError = isError || false;
         const message = {
             id: Date.now().toString(),
             content,
