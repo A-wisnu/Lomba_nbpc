@@ -14,15 +14,32 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#16a34a',
-                        secondary: '#22c55e',
-                        accent: '#84cc16',
+                        // Educational Psychology Color Palette
+                        primary: '#059669', // Emerald 600 - trust, growth, nature
+                        secondary: '#10b981', // Emerald 500 - harmony, balance
+                        accent: '#f59e0b', // Amber 500 - energy, optimism, attention
+                        success: '#22c55e', // Green 500 - achievement, progress
+                        info: '#3b82f6', // Blue 500 - intelligence, reliability, focus
+                        warning: '#f59e0b', // Amber 500 - attention, caution
+                        danger: '#ef4444', // Red 500 - urgency, importance
+                        // Learning-specific colors
+                        'learn-focus': '#6366f1', // Indigo 500 - concentration, deep thinking
+                        'learn-easy': '#22c55e', // Green 500 - beginner friendly, safe
+                        'learn-medium': '#f59e0b', // Amber 500 - moderate challenge
+                        'learn-hard': '#dc2626', // Red 600 - advanced, challenging
+                        'learn-calm': '#8b5cf6', // Violet 500 - creativity, calm learning
+                        // Neutral colors for clean design
+                        'gray-warm': '#6b7280', // Warm gray for text
+                        'gray-cool': '#64748b', // Cool gray for subtle elements
                     },
                     animation: {
                         'fade-in-up': 'fadeInUp 0.6s ease-out',
                         'fade-in-down': 'fadeInDown 0.6s ease-out',
                         'scale-in': 'scaleIn 0.5s ease-out',
-                        'slide-in-up': 'slideInUp 0.4s ease-out'
+                        'slide-in-up': 'slideInUp 0.4s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                        'pulse-soft': 'pulseSoft 3s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
                     }
                 }
             }
@@ -68,45 +85,70 @@
     </nav>
 
     <!-- Header -->
-    <section class="relative bg-gradient-to-br from-primary via-secondary to-accent text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section class="relative bg-gradient-to-br from-learn-focus via-primary to-learn-calm text-white py-16 sm:py-20 lg:py-24 overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
         
+        <!-- Learning motivation elements -->
+        <div class="absolute top-10 left-10 w-8 h-8 bg-accent/30 rounded-full animate-pulse-soft"></div>
+        <div class="absolute top-20 right-20 w-6 h-6 bg-white/20 rounded-full animate-bounce-gentle"></div>
+        <div class="absolute bottom-20 left-16 w-4 h-4 bg-accent/40 rounded-full animate-glow"></div>
+        
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <!-- Main Heading -->
+                <!-- Main Heading with Learning Psychology -->
                 <div class="mb-6" data-animation="fade-in-up">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-6 animate-glow">
+                        <i class="fas fa-graduation-cap text-3xl text-accent"></i>
+                    </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                        <span class="block fade-in-up stagger-1">Pusat Edukasi</span>
-                        <span class="block text-yellow-300 fade-in-up stagger-2">Hidroponik</span>
+                        <span class="block fade-in-up stagger-1">Pusat Pembelajaran</span>
+                        <span class="block text-accent fade-in-up stagger-2 animate-glow">Hidroponik</span>
                     </h1>
+                    <div class="w-24 h-1 bg-accent mx-auto rounded-full mt-4 animate-pulse-soft"></div>
                 </div>
                 
-                <!-- Subtitle -->
+                <!-- Subtitle with Motivational Psychology -->
                 <div class="mb-8" data-animation="fade-in-up" data-delay="600">
                     <p class="text-lg sm:text-xl lg:text-2xl opacity-90 max-w-4xl mx-auto leading-relaxed">
-                        Pelajari semua tentang budidaya hidroponik dari <span class="text-yellow-300 font-semibold">dasar hingga mahir</span> 
-                        dengan video tutorial dan panduan lengkap dari para ahli
+                        Mulai perjalanan pembelajaran Anda dari <span class="text-accent font-semibold bg-white/10 px-2 py-1 rounded">pemula hingga ahli</span> 
+                        dengan panduan interaktif yang dirancang khusus untuk <span class="text-white font-semibold">kesuksesan Anda</span>
                     </p>
                 </div>
                 
-                <!-- Stats -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-4xl mx-auto mb-8" data-animation="fade-in-up" data-delay="900">
-                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 ">
-                        <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">500+</div>
-                        <div class="text-sm lg:text-base opacity-80">Video Tutorial</div>
+                <!-- Achievement Stats with Psychology -->
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-5xl mx-auto mb-8" data-animation="fade-in-up" data-delay="900">
+                    <div class="stats-card bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                        <div class="flex items-center justify-center w-12 h-12 bg-accent/20 rounded-xl mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-play text-accent text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-accent mb-1 group-hover:animate-pulse">500+</div>
+                        <div class="text-sm lg:text-base opacity-90 font-medium">Video Tutorial</div>
+                        <div class="text-xs opacity-70 mt-1">Pembelajaran Interaktif</div>
                     </div>
-                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 ">
-                        <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">50+</div>
-                        <div class="text-sm lg:text-base opacity-80">Panduan PDF</div>
+                    <div class="stats-card bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                        <div class="flex items-center justify-center w-12 h-12 bg-success/20 rounded-xl mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-file-alt text-success text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-success mb-1 group-hover:animate-pulse">50+</div>
+                        <div class="text-sm lg:text-base opacity-90 font-medium">Panduan PDF</div>
+                        <div class="text-xs opacity-70 mt-1">Referensi Lengkap</div>
                     </div>
-                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 ">
-                        <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">10K+</div>
-                        <div class="text-sm lg:text-base opacity-80">Siswa Aktif</div>
+                    <div class="stats-card bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                        <div class="flex items-center justify-center w-12 h-12 bg-info/20 rounded-xl mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-users text-info text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-info mb-1 group-hover:animate-pulse">10K+</div>
+                        <div class="text-sm lg:text-base opacity-90 font-medium">Siswa Aktif</div>
+                        <div class="text-xs opacity-70 mt-1">Komunitas Belajar</div>
                     </div>
-                    <div class="stats-card bg-white/10 backdrop-blur-sm rounded-xl p-4 lg:p-6 ">
-                        <div class="text-2xl lg:text-3xl font-bold text-yellow-300 mb-1">95%</div>
-                        <div class="text-sm lg:text-base opacity-80">Tingkat Sukses</div>
+                    <div class="stats-card bg-white/15 backdrop-blur-sm rounded-2xl p-4 lg:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                        <div class="flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-trophy text-white text-xl"></i>
+                        </div>
+                        <div class="text-2xl lg:text-3xl font-bold text-white mb-1 group-hover:animate-pulse">95%</div>
+                        <div class="text-sm lg:text-base opacity-90 font-medium">Tingkat Sukses</div>
+                        <div class="text-xs opacity-70 mt-1">Pencapaian Luar Biasa</div>
                     </div>
                 </div>
                 
@@ -128,74 +170,111 @@
         <div class="absolute bottom-32 right-10 w-5 h-5 bg-yellow-300/30 rounded-full animate-bounce" style="animation-delay: 1.5s;"></div>
     </section>
 
-    <!-- Filter Tabs -->
+    <!-- Learning Path Filter Tabs -->
     <div id="content-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Pilih Jalur Pembelajaran Anda</h2>
+            <p class="text-gray-warm text-lg">Mulai dari level yang sesuai dengan kemampuan Anda</p>
+        </div>
         <div class="flex flex-wrap gap-4 justify-center mb-8">
-            <button class="btn btn-primary" data-filter="all">
+            <button class="filter-btn btn bg-primary text-white border-primary hover:bg-primary/90 active" data-filter="all">
                 <i class="fas fa-list btn-icon"></i>
                 <span>Semua Materi</span>
+                <div class="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse-soft"></div>
             </button>
-            <button class="btn btn-soft" data-filter="beginner">
+            <button class="filter-btn btn bg-white text-learn-easy border-learn-easy hover:bg-learn-easy hover:text-white transition-all duration-300" data-filter="beginner">
                 <i class="fas fa-seedling btn-icon"></i>
                 <span>Pemula</span>
+                <span class="ml-2 text-xs bg-learn-easy/20 text-learn-easy px-2 py-1 rounded-full">Mudah</span>
             </button>
-            <button class="btn btn-soft-secondary" data-filter="intermediate">
+            <button class="filter-btn btn bg-white text-learn-medium border-learn-medium hover:bg-learn-medium hover:text-white transition-all duration-300" data-filter="intermediate">
                 <i class="fas fa-leaf btn-icon"></i>
                 <span>Menengah</span>
+                <span class="ml-2 text-xs bg-learn-medium/20 text-learn-medium px-2 py-1 rounded-full">Sedang</span>
             </button>
-            <button class="btn btn-soft-accent" data-filter="advanced">
+            <button class="filter-btn btn bg-white text-learn-hard border-learn-hard hover:bg-learn-hard hover:text-white transition-all duration-300" data-filter="advanced">
                 <i class="fas fa-tree btn-icon"></i>
                 <span>Lanjutan</span>
+                <span class="ml-2 text-xs bg-learn-hard/20 text-learn-hard px-2 py-1 rounded-full">Sulit</span>
             </button>
+        </div>
+        
+        <!-- Learning Progress Indicator -->
+        <div class="max-w-2xl mx-auto">
+            <div class="flex items-center justify-between text-sm text-gray-500 mb-2">
+                <span>Progres Pembelajaran</span>
+                <span id="progress-text">0% Selesai</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+                <div id="progress-bar" class="bg-gradient-to-r from-learn-easy via-learn-medium to-learn-hard h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+            </div>
         </div>
     </div>
 
     <!-- Content Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Video Tutorial 1 -->
-            <div class="content-item bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 " data-category="beginner">
-                <div class="relative group">
-                    <div class="aspect-video bg-gradient-to-br from-green-400 via-emerald-500 to-blue-500 flex items-center justify-center relative overflow-hidden">
+            <!-- Video Tutorial 1 - Enhanced Psychology -->
+            <div class="content-item bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-learn-easy/20 hover:border-learn-easy/40 group" data-category="beginner">
+                <div class="relative">
+                    <div class="aspect-video bg-gradient-to-br from-learn-easy via-primary to-success flex items-center justify-center relative overflow-hidden cursor-pointer" onclick="playVideo('beginner-intro')">
                         <div class="text-center text-white z-10">
-                            <i class="fas fa-play-circle text-6xl mb-2 opacity-80 group-hover:scale-110 transition-transform duration-300"></i>
-                            <p class="text-sm font-medium">Video Tutorial</p>
+                            <div class="relative">
+                                <i class="fas fa-play-circle text-6xl mb-2 opacity-90 group-hover:scale-110 transition-transform duration-300 hover:text-accent"></i>
+                                <div class="absolute inset-0 bg-white/20 rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>
+                            </div>
+                            <p class="text-sm font-medium">Video Tutorial Interaktif</p>
+                            <div class="w-16 h-1 bg-accent mx-auto mt-2 rounded-full"></div>
                         </div>
                         <!-- Animated background pattern -->
                         <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
                     </div>
-                    <div class="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                    <div class="absolute top-3 right-3 bg-learn-easy text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse-soft">
                         <i class="fas fa-seedling mr-1"></i>Pemula
                     </div>
-                    <div class="absolute top-3 left-3 bg-white/20 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs">
-                        <i class="fas fa-star mr-1"></i>4.9
+                    <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-learn-easy px-3 py-1 rounded-full text-xs font-semibold">
+                        <i class="fas fa-star mr-1 text-accent"></i>4.9
+                    </div>
+                    <div class="absolute bottom-3 left-3 bg-accent/90 text-white px-2 py-1 rounded-full text-xs font-medium">
+                        <i class="fas fa-gift mr-1"></i>GRATIS
                     </div>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors">
-                        Pengenalan Hidroponik untuk Pemula
-                    </h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Dasar-dasar sistem hidroponik, jenis-jenis tanaman yang cocok, dan persiapan awal untuk memulai kebun hidroponik Anda.
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-learn-easy transition-colors leading-tight">
+                            Pengenalan Hidroponik untuk Pemula
+                        </h3>
+                        <div class="flex items-center ml-2">
+                            <div class="w-2 h-2 bg-learn-easy rounded-full animate-pulse-soft"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-warm mb-4 leading-relaxed">
+                        Mulai perjalanan hidroponik Anda dengan <span class="text-learn-easy font-semibold">panduan step-by-step</span> yang mudah dipahami. 
+                        Pelajari dasar-dasar sistem dan persiapan awal untuk <span class="text-primary font-medium">kesuksesan pertama Anda</span>.
                     </p>
                     <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-4 text-sm text-gray-500">
-                            <span class="flex items-center">
-                                <i class="fas fa-clock mr-1 text-green-500"></i>15 menit
+                        <div class="flex items-center gap-4 text-sm">
+                            <span class="flex items-center text-learn-easy">
+                                <i class="fas fa-clock mr-1"></i>15 menit
                             </span>
-                            <span class="flex items-center">
-                                <i class="fas fa-users mr-1 text-blue-500"></i>1.2k
+                            <span class="flex items-center text-info">
+                                <i class="fas fa-users mr-1"></i>1.2k siswa
+                            </span>
+                            <span class="flex items-center text-accent">
+                                <i class="fas fa-certificate mr-1"></i>Sertifikat
                             </span>
                         </div>
-                        <span class="text-green-600 font-semibold">Gratis</span>
                     </div>
-                    <div class="btn-group">
-                        <button class="btn btn-success btn-sm">
-                            <i class="fas fa-play btn-icon"></i>
-                            <span>Tonton</span>
+                    <div class="flex gap-3">
+                        <button onclick="playVideo('beginner-intro')" class="flex-1 btn bg-learn-easy text-white hover:bg-learn-easy/90 transition-all duration-300 group/btn">
+                            <i class="fas fa-play btn-icon group-hover/btn:animate-bounce-gentle"></i>
+                            <span>Mulai Belajar</span>
                         </button>
-                        <button class="btn btn-outline btn-sm btn-icon-only">
-                            <i class="fas fa-bookmark btn-icon"></i>
+                        <button onclick="bookmarkContent('beginner-intro')" class="btn bg-gray-100 text-gray-600 hover:bg-accent hover:text-white transition-all duration-300 px-4">
+                            <i class="fas fa-bookmark"></i>
+                        </button>
+                        <button onclick="shareContent('beginner-intro')" class="btn bg-gray-100 text-gray-600 hover:bg-info hover:text-white transition-all duration-300 px-4">
+                            <i class="fas fa-share"></i>
                         </button>
                     </div>
                 </div>
@@ -420,102 +499,368 @@
         </div>
     </footer>
 
-        <i class="fas fa-question-circle"></i>
-    </button>
+    <!-- Bottom Navigation for Mobile -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg md:hidden z-50" id="bottom-nav">
+        <div class="flex justify-around items-center py-2">
+            <a href="index.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300" data-page="index">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-home text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Beranda</span>
+            </a>
+            <a href="edukasi.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300 active" data-page="edukasi">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-graduation-cap text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Edukasi</span>
+            </a>
+            <a href="monitoring.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300" data-page="monitoring">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Monitor</span>
+            </a>
+            <a href="chatbot.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300" data-page="chatbot">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">AI Chat</span>
+            </a>
+            <a href="komunitas.html" class="bottom-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-300" data-page="komunitas">
+                <div class="bottom-nav-icon-container">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <span class="bottom-nav-label text-xs font-medium mt-1">Komunitas</span>
+            </a>
+        </div>
+    </nav>
 
     <!-- Animation Scripts -->
     <script src="js/animations.js"></script>
     
-    <!-- Mobile Navigation -->
-    <script src="js/mobile-nav.js"></script>
+    <!-- Bottom Navigation -->
+    <script src="js/bottom-nav.js"></script>
     
-    <!-- Pop-up Controller -->
+    <!-- Enhanced Styles for Learning Psychology -->
+    <style>
+        /* Learning Psychology Animations */
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        
+        @keyframes pulseSoft {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.3); }
+            100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.6), 0 0 30px rgba(245, 158, 11, 0.4); }
+        }
+        
+        /* Bottom Navigation Styles */
+        .bottom-nav-item {
+            min-width: 60px;
+            position: relative;
+            color: #6b7280;
+        }
+        
+        .bottom-nav-item.active {
+            color: #059669;
+        }
+        
+        .bottom-nav-item.active .bottom-nav-icon-container {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        }
+        
+        .bottom-nav-item.active .bottom-nav-label {
+            color: #059669;
+            font-weight: 600;
+        }
+        
+        .bottom-nav-icon-container {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+        }
+        
+        .bottom-nav-item:not(.active):hover .bottom-nav-icon-container {
+            background: #f3f4f6;
+            transform: translateY(-1px);
+        }
+        
+        .bottom-nav-item:not(.active):hover {
+            color: #059669;
+        }
+        
+        /* Active indicator */
+        .bottom-nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #059669;
+            border-radius: 50%;
+            animation: pulseSoft 2s infinite;
+        }
+        
+        /* Body padding for bottom nav */
+        body {
+            padding-bottom: 80px;
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+        
+        /* Learning Progress Bar */
+        .progress-glow {
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+        }
+        
+        /* Enhanced button hover effects */
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+    </style>
 
     <script>
-        // Enhanced mobile menu toggle with animation
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const hamburgerIcon = this.querySelector('.hamburger-icon');
-            const isHidden = mobileMenu.classList.contains('hidden');
-            
-            if (isHidden) {
-                // Show menu
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('slide-in-down');
-                
-                // Animate hamburger to X
-                const spans = hamburgerIcon.querySelectorAll('span');
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-                
-                setTimeout(() => {
-                    mobileMenu.classList.remove('slide-in-down');
-                }, 300);
-            } else {
-                // Hide menu
-                mobileMenu.classList.add('slide-out-up');
-                
-                // Animate X back to hamburger
-                const spans = hamburgerIcon.querySelectorAll('span');
-                spans[0].style.transform = '';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = '';
-                
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('slide-out-up');
-                }, 300);
+        // Educational Content Controller
+        class EducationController {
+            constructor() {
+                this.completedContent = new Set();
+                this.currentFilter = 'all';
+                this.init();
             }
-        });
-
-        // Smooth scroll to content
+            
+            init() {
+                this.setupFilterButtons();
+                this.setupFAQs();
+                this.setupProgressTracking();
+                this.loadUserProgress();
+            }
+            
+            setupFilterButtons() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.handleFilterClick(e.target.closest('.filter-btn'));
+                    });
+                });
+            }
+            
+            handleFilterClick(btn) {
+                // Update active button with smooth transition
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active');
+                    // Reset to default styles based on data-filter
+                    const filter = b.dataset.filter;
+                    if (filter === 'all') {
+                        b.className = 'filter-btn btn bg-white text-primary border-primary hover:bg-primary hover:text-white transition-all duration-300';
+                    } else if (filter === 'beginner') {
+                        b.className = 'filter-btn btn bg-white text-learn-easy border-learn-easy hover:bg-learn-easy hover:text-white transition-all duration-300';
+                    } else if (filter === 'intermediate') {
+                        b.className = 'filter-btn btn bg-white text-learn-medium border-learn-medium hover:bg-learn-medium hover:text-white transition-all duration-300';
+                    } else if (filter === 'advanced') {
+                        b.className = 'filter-btn btn bg-white text-learn-hard border-learn-hard hover:bg-learn-hard hover:text-white transition-all duration-300';
+                    }
+                });
+                
+                // Set active button
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                if (filter === 'all') {
+                    btn.className = 'filter-btn btn bg-primary text-white border-primary hover:bg-primary/90 active';
+                } else if (filter === 'beginner') {
+                    btn.className = 'filter-btn btn bg-learn-easy text-white border-learn-easy hover:bg-learn-easy/90 active';
+                } else if (filter === 'intermediate') {
+                    btn.className = 'filter-btn btn bg-learn-medium text-white border-learn-medium hover:bg-learn-medium/90 active';
+                } else if (filter === 'advanced') {
+                    btn.className = 'filter-btn btn bg-learn-hard text-white border-learn-hard hover:bg-learn-hard/90 active';
+                }
+                
+                this.currentFilter = filter;
+                this.filterContent(filter);
+            }
+            
+            filterContent(filter) {
+                const items = document.querySelectorAll('.content-item');
+                let visibleCount = 0;
+                
+                items.forEach((item, index) => {
+                    const category = item.dataset.category;
+                    const shouldShow = filter === 'all' || category === filter;
+                    
+                    if (shouldShow) {
+                        item.style.display = 'block';
+                        item.style.animationDelay = `${index * 0.1}s`;
+                        item.classList.add('fade-in-up');
+                        visibleCount++;
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('fade-in-up');
+                    }
+                });
+                
+                // Update progress bar based on visible content
+                this.updateProgressDisplay();
+            }
+            
+            setupFAQs() {
+                // Fix FAQ selectors - the buttons don't have faq-btn class
+                document.querySelectorAll('.border.border-gray-200 button').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const content = this.parentElement.querySelector('.faq-content');
+                        const icon = this.querySelector('i.fa-chevron-down, i.fa-chevron-up');
+                        
+                        if (content && icon) {
+                            if (content.classList.contains('hidden')) {
+                                content.classList.remove('hidden');
+                                icon.classList.remove('fa-chevron-down');
+                                icon.classList.add('fa-chevron-up');
+                            } else {
+                                content.classList.add('hidden');
+                                icon.classList.remove('fa-chevron-up');
+                                icon.classList.add('fa-chevron-down');
+                            }
+                        }
+                    });
+                });
+            }
+            
+            setupProgressTracking() {
+                // Load completed content from localStorage
+                const saved = localStorage.getItem('labtanam-education-progress');
+                if (saved) {
+                    this.completedContent = new Set(JSON.parse(saved));
+                }
+                this.updateProgressDisplay();
+            }
+            
+            updateProgressDisplay() {
+                const totalContent = document.querySelectorAll('.content-item').length;
+                const completedCount = this.completedContent.size;
+                const percentage = totalContent > 0 ? Math.round((completedCount / totalContent) * 100) : 0;
+                
+                const progressBar = document.getElementById('progress-bar');
+                const progressText = document.getElementById('progress-text');
+                
+                if (progressBar && progressText) {
+                    progressBar.style.width = `${percentage}%`;
+                    progressText.textContent = `${percentage}% Selesai`;
+                    
+                    if (percentage > 50) {
+                        progressBar.classList.add('progress-glow');
+                    }
+                }
+            }
+            
+            loadUserProgress() {
+                // Mark completed content
+                this.completedContent.forEach(contentId => {
+                    const element = document.querySelector(`[data-content-id="${contentId}"]`);
+                    if (element) {
+                        element.classList.add('completed');
+                    }
+                });
+            }
+            
+            saveProgress() {
+                localStorage.setItem('labtanam-education-progress', JSON.stringify([...this.completedContent]));
+            }
+        }
+        
+        // Content Interaction Functions
+        function playVideo(contentId) {
+            // Add to completed content
+            if (window.educationController) {
+                window.educationController.completedContent.add(contentId);
+                window.educationController.saveProgress();
+                window.educationController.updateProgressDisplay();
+            }
+            
+            // Show success feedback
+            showNotification('Video dimulai! 🎥', 'success');
+            
+            // In a real app, this would open a video player
+            console.log('Playing video:', contentId);
+        }
+        
+        function bookmarkContent(contentId) {
+            showNotification('Konten disimpan ke bookmark! 📚', 'info');
+            console.log('Bookmarked:', contentId);
+        }
+        
+        function shareContent(contentId) {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'LABTANAM - Edukasi Hidroponik',
+                    text: 'Lihat konten pembelajaran hidroponik yang menarik ini!',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback
+                navigator.clipboard.writeText(window.location.href);
+                showNotification('Link disalin ke clipboard! 🔗', 'success');
+            }
+        }
+        
         function scrollToContent() {
             document.querySelector('#content-section').scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
         }
-
-        // Filter functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Update active button
-                document.querySelectorAll('.filter-btn').forEach(b => {
-                    b.classList.remove('active', 'bg-primary', 'text-white');
-                    b.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
-                });
-                this.classList.add('active', 'bg-primary', 'text-white');
-                this.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
-
-                // Filter content
-                const filter = this.dataset.filter;
-                document.querySelectorAll('.content-item').forEach(item => {
-                    if (filter === 'all' || item.dataset.category === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // FAQ functionality
-        document.querySelectorAll('.faq-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const content = this.nextElementSibling;
-                const icon = this.querySelector('i');
-                
-                if (content.classList.contains('hidden')) {
-                    content.classList.remove('hidden');
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
-                } else {
-                    content.classList.add('hidden');
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
-                }
-            });
+        
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white transform translate-x-full transition-transform duration-300`;
+            
+            if (type === 'success') {
+                notification.classList.add('bg-success');
+            } else if (type === 'info') {
+                notification.classList.add('bg-info');
+            } else {
+                notification.classList.add('bg-gray-600');
+            }
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            window.educationController = new EducationController();
         });
     </script>
 </body>
